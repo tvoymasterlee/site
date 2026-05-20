@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yonnilee — мастер Ли · тантрический йони-массаж</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose:     #D4819A;
+    --rose-lt:  #F4D6DF;
+    --rose-dk:  #8B4560;
+    --blush:    #F0C4CF;
+    --mauve:    #9E7FA6;
+    --mauve-lt: #E8DCF0;
+    --gold:     #C9A96E;
+    --gold-lt:  #F5EDD8;
+    --sage:     #B5C4B1;
+    --sage-dk:  #6E8F69;
+    --cream:    #FAF4EF;
+    --sand:     #E8D8CA;
+    --mist:     #F7F2F9;
+    --white:    #FDFAFC;
+    --ink:      #2A1F2D;
+    --ink-md:   #6B5773;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Jost', system-ui, sans-serif;
+    --r-xs:   4px;
+    --r-s:    12px;
+    --r-m:    20px;
+    --r-l:    40px;
+    --r-pill: 100px;
+    --shadow:       0 4px 24px rgba(180,100,130,0.10);
+    --shadow-hover: 0 8px 40px rgba(180,100,130,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-thumb { background: var(--rose-lt); border-radius: 4px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+  }
+  nav.scrolled {
+    background: rgba(250,244,239,0.92);
+    backdrop-filter: blur(16px);
+    padding: 14px 40px;
+    box-shadow: 0 1px 0 rgba(212,129,154,0.12);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .nav-logo span { color: var(--rose); font-style: italic; }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-md);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--rose); }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 22px;
+    border-radius: var(--r-pill);
+    background: var(--rose);
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .nav-cta:hover { background: var(--rose-dk); transform: translateY(-1px); box-shadow: var(--shadow); }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .burger span {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--ink);
+    transition: all 0.3s;
+    border-radius: 2px;
+  }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--cream);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+  .mobile-menu a:hover { color: var(--rose); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 60px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 0.5px;
+    background: var(--rose);
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--ink);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.35s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+  .hero-sub {
+    font-size: 14px;
+    font-weight: 200;
+    color: var(--ink-md);
+    line-height: 1.7;
+    max-width: 360px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s forwards;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.65s forwards;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: var(--r-pill);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border: none;
+    transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    text-decoration: none;
+  }
+  .btn-primary { background: var(--rose); color: #fff; }
+  .btn-primary:hover { background: var(--rose-dk); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .btn-secondary { background: transparent; color: var(--rose); border: 1px solid var(--rose-lt); }
+  .btn-secondary:hover { border-color: var(--rose); background: var(--rose-lt); transform: translateY(-2px); }
+  .btn-gold { background: var(--gold); color: #fff; }
+  .btn-gold:hover { background: #b08a52; transform: translateY(-2px); box-shadow: var(--shadow); }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-visual {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #EDD5DE 0%, #E8DCF0 40%, #F5EDD8 100%);
+  }
+  .hero-float {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-orb-wrap {
+    position: relative;
+    width: 340px;
+    height: 420px;
+  }
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: float 6s ease-in-out infinite;
+  }
+  .orb-1 {
+    width: 260px; height: 260px;
+    background: rgba(212,129,154,0.35);
+    top: 40px; left: 30px;
+    animation-delay: 0s;
+  }
+  .orb-2 {
+    width: 180px; height: 180px;
+    background: rgba(158,127,166,0.30);
+    bottom: 60px; right: 20px;
+    animation-delay: 2s;
+  }
+  .orb-3 {
+    width: 130px; height: 130px;
+    background: rgba(201,169,110,0.25);
+    top: 20px; right: 40px;
+    animation-delay: 4s;
+  }
+  .hero-icon-center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    animation: pulseGlow 4s ease-in-out infinite;
+  }
+  .hero-bg-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: var(--font-display);
+    font-size: 120px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(139,69,96,0.08);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+  }
+  .hero-stats {
+    position: absolute;
+    bottom: 48px;
+    left: 80px;
+    display: flex;
+    gap: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.9s forwards;
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 3px; }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--rose);
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-md);
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 48px;
+    right: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-md);
+    opacity: 0;
+    animation: fadeIn 1s 1.2s forwards;
+  }
+  .scroll-arrow {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--rose));
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  /* ── SECTION BASE ── */
+  section { position: relative; }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .section-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 0.5px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  .section-title em { font-style: italic; }
+  .section-sub {
+    font-size: 14px;
+    font-weight: 200;
+    color: var(--ink-md);
+    line-height: 1.7;
+    margin-top: 16px;
+    max-width: 480px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    text-align: center;
+    font-size: 13px;
+    color: var(--sand);
+    letter-spacing: 0.3em;
+    padding: 12px 0;
+  }
+
+  /* ── ABOUT ── */
+  .about-section {
+    padding: 110px 0;
+    background: var(--white);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-visual {
+    position: relative;
+    height: 480px;
+  }
+  .about-bg-card {
+    position: absolute;
+    border-radius: var(--r-l);
+    background: linear-gradient(145deg, var(--rose-lt), var(--mauve-lt));
+    top: 0; left: 0;
+    width: 85%;
+    height: 85%;
+  }
+  .about-main-card {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 80%;
+    height: 80%;
+    background: var(--ink);
+    border-radius: var(--r-l);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+  }
+  .about-icon-wrap {
+    width: 80px; height: 80px;
+    background: rgba(212,129,154,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulseGlow 4s ease-in-out infinite;
+  }
+  .about-quote {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blush);
+    text-align: center;
+    line-height: 1.4;
+  }
+  .about-sig {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose);
+  }
+  .about-content .section-eyebrow { color: var(--rose); }
+  .about-content .section-eyebrow::before { background: var(--rose); }
+  .about-text {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--ink-md);
+    line-height: 1.75;
+    margin-top: 24px;
+  }
+  .about-text p + p { margin-top: 16px; }
+  .about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 14px;
+    border-radius: var(--r-pill);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.07em;
+  }
+  .tag-rose  { background: var(--rose-lt);  color: var(--rose-dk); }
+  .tag-mauve { background: var(--mauve-lt); color: #6B4A7A; }
+  .tag-gold  { background: var(--gold-lt);  color: #8A6A30; }
+  .tag-sage  { background: #E5EDE4;         color: var(--sage-dk); }
+
+  /* ── SERVICES ── */
+  .services-section {
+    padding: 110px 0;
+    background: var(--cream);
+    overflow: hidden;
+  }
+  .services-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .services-header .section-eyebrow { justify-content: center; color: var(--mauve); }
+  .services-header .section-eyebrow::before { background: var(--mauve); }
+  .services-header .section-sub { margin: 16px auto 0; text-align: center; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: var(--r-l);
+    padding: 40px 32px;
+    border: 0.5px solid var(--sand);
+    box-shadow: var(--shadow);
+    transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--rose), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .service-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-6px);
+  }
+  .service-card:hover::before { opacity: 1; }
+  .service-card.featured {
+    background: var(--ink);
+    border-color: transparent;
+  }
+  .service-icon-wrap {
+    width: 56px; height: 56px;
+    border-radius: var(--r-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .service-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .service-card.featured .service-name { color: var(--blush); }
+  .service-desc {
+    font-size: 13px;
+    font-weight: 200;
+    color: var(--ink-md);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .service-card.featured .service-desc { color: rgba(240,196,207,0.6); }
+  .service-price {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .service-price-note {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-md);
+  }
+  .service-card.featured .service-price-note { color: rgba(240,196,207,0.4); }
+  .service-divider {
+    height: 0.5px;
+    background: var(--sand);
+    margin: 20px 0;
+  }
+  .service-card.featured .service-divider { background: rgba(255,255,255,0.1); }
+  .service-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .service-features li {
+    font-size: 12px;
+    font-weight: 200;
+    color: var(--ink-md);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .service-card.featured .service-features li { color: rgba(240,196,207,0.6); }
+  .service-features li::before {
+    content: '';
+    display: block;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--rose);
+    flex-shrink: 0;
+  }
+
+  /* ── RITUAL ── */
+  .ritual-section {
+    padding: 110px 0;
+    background: var(--ink);
+    overflow: hidden;
+  }
+  .ritual-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .ritual-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .ritual-text .section-eyebrow { color: var(--rose); }
+  .ritual-text .section-eyebrow::before { background: var(--rose); }
+  .ritual-text .section-title { color: var(--blush); }
+  .ritual-text .section-sub { color: rgba(240,196,207,0.6); max-width: 420px; }
+  .ritual-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 40px;
+  }
+  .ritual-step {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 0.5px solid rgba(255,255,255,0.07);
+    position: relative;
+    transition: all 0.3s;
+  }
+  .ritual-step:last-child { border-bottom: none; }
+  .ritual-step-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 300;
+    color: rgba(212,129,154,0.2);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 48px;
+    transition: color 0.3s;
+  }
+  .ritual-step:hover .ritual-step-num { color: var(--rose); }
+  .ritual-step-body { flex: 1; }
+  .ritual-step-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--blush);
+    margin-bottom: 4px;
+  }
+  .ritual-step-text {
+    font-size: 13px;
+    font-weight: 200;
+    color: rgba(240,196,207,0.5);
+    line-height: 1.65;
+  }
+  .ritual-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 460px;
+  }
+  .ritual-orb-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 0.5px solid rgba(212,129,154,0.15);
+    animation: spin 20s linear infinite;
+  }
+  .ritual-orb-ring-1 { width: 320px; height: 320px; animation-duration: 20s; }
+  .ritual-orb-ring-2 { width: 240px; height: 240px; animation-duration: 14s; animation-direction: reverse; border-color: rgba(201,169,110,0.15); }
+  .ritual-orb-ring-3 { width: 160px; height: 160px; animation-duration: 9s; border-color: rgba(158,127,166,0.2); }
+  .ritual-center-glow {
+    position: absolute;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,129,154,0.3), transparent);
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+  .ritual-dot {
+    position: absolute;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--rose);
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section {
+    padding: 110px 0;
+    background: var(--mist);
+    overflow: hidden;
+  }
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .testimonials-header .section-eyebrow { justify-content: center; color: var(--gold); }
+  .testimonials-header .section-eyebrow::before { background: var(--gold); }
+  .testimonials-track-wrap { overflow: hidden; position: relative; }
+  .testimonials-track-wrap::before,
+  .testimonials-track-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .testimonials-track-wrap::before { left: 0; background: linear-gradient(to right, var(--mist), transparent); }
+  .testimonials-track-wrap::after { right: 0; background: linear-gradient(to left, var(--mist), transparent); }
+  .testimonials-track {
+    display: flex;
+    gap: 20px;
+    animation: marquee 32s linear infinite;
+    width: max-content;
+  }
+  .testimonials-track:hover { animation-play-state: paused; }
+  .testi-card {
+    width: 320px;
+    flex-shrink: 0;
+    background: var(--white);
+    border-radius: var(--r-l);
+    padding: 32px 28px;
+    border: 0.5px solid var(--sand);
+    box-shadow: var(--shadow);
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+  .testi-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+  }
+  .testi-star { color: var(--gold); font-size: 12px; }
+  .testi-text {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  .testi-divider { height: 0.5px; background: var(--sand); margin-bottom: 16px; }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .testi-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rose-lt), var(--mauve-lt));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--rose-dk);
+    font-weight: 300;
+  }
+  .testi-name { font-size: 12px; font-weight: 400; color: var(--ink); }
+  .testi-role { font-size: 11px; font-weight: 200; color: var(--ink-md); }
+
+  /* ── ONLINE ── */
+  .online-section {
+    padding: 110px 0;
+    background: var(--white);
+  }
+  .online-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .online-content .section-eyebrow { color: var(--sage-dk); }
+  .online-content .section-eyebrow::before { background: var(--sage-dk); }
+  .online-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .online-feature {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    border-radius: var(--r-m);
+    background: var(--cream);
+    border: 0.5px solid var(--sand);
+    transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .online-feature:hover { transform: translateX(6px); box-shadow: var(--shadow); }
+  .online-feature-icon {
+    width: 44px; height: 44px;
+    border-radius: var(--r-s);
+    background: var(--rose-lt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .online-feature-title { font-size: 14px; font-weight: 400; color: var(--ink); margin-bottom: 4px; }
+  .online-feature-text { font-size: 12px; font-weight: 200; color: var(--ink-md); line-height: 1.6; }
+  .online-visual {
+    position: relative;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .online-phone {
+    width: 240px;
+    background: var(--ink);
+    border-radius: 36px;
+    padding: 20px;
+    box-shadow: 0 32px 80px rgba(42,31,45,0.3);
+    position: relative;
+    z-index: 2;
+    animation: float 5s ease-in-out infinite;
+  }
+  .phone-notch {
+    width: 80px; height: 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    margin: 0 auto 20px;
+  }
+  .phone-content { display: flex; flex-direction: column; gap: 12px; }
+  .phone-msg {
+    padding: 12px 14px;
+    border-radius: 16px 16px 4px 16px;
+    background: rgba(212,129,154,0.15);
+    font-size: 12px;
+    font-weight: 200;
+    color: var(--blush);
+    line-height: 1.5;
+    max-width: 80%;
+    margin-left: auto;
+  }
+  .phone-msg.them {
+    border-radius: 16px 16px 16px 4px;
+    background: rgba(255,255,255,0.06);
+    color: rgba(240,196,207,0.6);
+    margin-left: 0;
+  }
+  .phone-time { font-size: 9px; color: rgba(240,196,207,0.3); text-align: center; }
+
+  /* ── CTA BANNER ── */
+  .cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--rose-dk), var(--ink));
+    overflow: hidden;
+    position: relative;
+  }
+  .cta-bg-elements { position: absolute; inset: 0; pointer-events: none; }
+  .cta-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .cta-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rose-lt);
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+  .cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .cta-title em { font-style: italic; color: var(--rose-lt); }
+  .cta-sub {
+    font-size: 14px;
+    font-weight: 200;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 36px;
+    line-height: 1.7;
+  }
+  .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-light { background: var(--white); color: var(--ink); }
+  .btn-light:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+  .btn-outline-light { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+  .btn-outline-light:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 60px 0 36px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 48px;
+  }
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--blush);
+    margin-bottom: 12px;
+  }
+  .footer-brand-name span { font-style: italic; color: var(--rose); }
+  .footer-brand-text {
+    font-size: 13px;
+    font-weight: 200;
+    color: rgba(240,196,207,0.45);
+    line-height: 1.7;
+    max-width: 300px;
+  }
+  .footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .social-btn {
+    width: 36px; height: 36px;
+    border-radius: var(--r-s);
+    background: rgba(212,129,154,0.1);
+    border: 0.5px solid rgba(212,129,154,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--rose);
+    font-size: 14px;
+    transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .social-btn:hover { background: var(--rose); color: #fff; transform: translateY(-3px); }
+  .footer-col-title {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 18px;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a {
+    font-size: 13px;
+    font-weight: 200;
+    color: rgba(240,196,207,0.45);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+  .footer-links a:hover { color: var(--rose); }
+  .footer-bottom {
+    border-top: 0.5px solid rgba(255,255,255,0.06);
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .footer-copy {
+    font-size: 11px;
+    font-weight: 200;
+    color: rgba(240,196,207,0.25);
+  }
+  .footer-ornament {
+    font-size: 13px;
+    color: rgba(212,129,154,0.25);
+    letter-spacing: 0.3em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-14px); }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.06); }
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.15); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 120px 32px 60px; }
+    .hero-right { height: 300px; }
+    .hero-stats { left: 32px; bottom: 24px; gap: 28px; }
+    .scroll-hint { display: none; }
+    nav { padding: 16px 24px; }
+    nav.scrolled { padding: 12px 24px; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .burger { display: flex; }
+    .about-grid,
+    .ritual-content,
+    .online-grid { grid-template-columns: 1fr; gap: 48px; }
+    .about-visual { height: 280px; }
+    .ritual-visual { height: 240px; }
+    .online-visual { height: 320px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .container { padding: 0 24px; }
+    .hero-bg-text { font-size: 70px; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-direction: column; gap: 16px; }
+    .cta-content { padding: 0 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">yonni<span>lee</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">о практике</a></li>
+    <li><a href="#services">программы</a></li>
+    <li><a href="#ritual">ритуал</a></li>
+    <li><a href="#online">онлайн</a></li>
+  </ul>
+  <a href="https://t.me/tvoymasterlee" target="_blank" class="nav-cta">записаться</a>
+  <div class="burger" id="burger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">о практике</a>
+  <a href="#services" onclick="toggleMenu()">программы</a>
+  <a href="#ritual" onclick="toggleMenu()">ритуал</a>
+  <a href="#online" onclick="toggleMenu()">онлайн</a>
+  <a href="https://t.me/tvoymasterlee" target="_blank" onclick="toggleMenu()" style="color:var(--rose)">@tvoymasterlee</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">мастер Ли · тантрическая практика</div>
+    <h1 class="hero-title">
+      тело умеет<br><em>чувствовать</em><br>больше
+    </h1>
+    <p class="hero-sub">
+      нежно. без давления. без спешки.<br>
+      пространство, где вы снова встречаетесь с собой.
+    </p>
+    <div class="hero-actions">
+      <a href="https://t.me/tvoymasterlee" target="_blank" class="btn btn-primary">написать мастеру Ли</a>
+      <a href="#services" class="btn btn-secondary">программы</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual"></div>
+    <div class="hero-float">
+      <div class="hero-orb-wrap">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="hero-bg-text">йони</div>
+        <div class="hero-icon-center">
+          <!-- Yoni icon -->
+          <svg width="88" height="88" viewBox="0 0 44 44" fill="none">
+            <ellipse cx="22" cy="22" rx="14" ry="18" stroke="#D4819A" stroke-width="1.2" fill="none"/>
+            <ellipse cx="22" cy="22" rx="8" ry="11" stroke="#D4819A" stroke-width="0.8" fill="rgba(212,129,154,0.08)"/>
+            <path d="M22 10 C26 16 26 26 22 30 C18 26 18 16 22 10Z" fill="rgba(212,129,154,0.18)" stroke="#8B4560" stroke-width="0.7"/>
+            <path d="M8 22 Q14 17 22 22 Q14 27 8 22Z" fill="rgba(212,129,154,0.12)" stroke="#D4819A" stroke-width="0.6"/>
+            <path d="M36 22 Q30 17 22 22 Q30 27 36 22Z" fill="rgba(212,129,154,0.12)" stroke="#D4819A" stroke-width="0.6"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-num">2+</span>
+      <span class="stat-label">года практики</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">300+</span>
+      <span class="stat-label">подписчиков</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">4</span>
+      <span class="stat-label">программы</span>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>далее</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-bg-card"></div>
+        <div class="about-main-card">
+          <div class="about-icon-wrap">
+            <!-- Lotus icon -->
+            <svg width="52" height="52" viewBox="0 0 44 44" fill="none">
+              <path d="M6 31 Q22 28 38 31" stroke="#B5C4B1" stroke-width="0.8" fill="none"/>
+              <path d="M22 31 Q20 26 22 20" stroke="#6E8F69" stroke-width="0.9" fill="none"/>
+              <path d="M22 20 Q15 14 12 8 Q18 12 22 20Z" fill="rgba(212,129,154,0.18)" stroke="#D4819A" stroke-width="0.7"/>
+              <path d="M22 20 Q29 14 32 8 Q26 12 22 20Z" fill="rgba(212,129,154,0.18)" stroke="#D4819A" stroke-width="0.7"/>
+              <path d="M22 20 Q14 16 10 22 Q16 19 22 24Z" fill="rgba(240,196,207,0.6)" stroke="#D4819A" stroke-width="0.8"/>
+              <path d="M22 20 Q30 16 34 22 Q28 19 22 24Z" fill="rgba(240,196,207,0.6)" stroke="#D4819A" stroke-width="0.8"/>
+              <path d="M22 20 Q19 24 22 30 Q25 24 22 20Z" fill="rgba(212,129,154,0.85)" stroke="#8B4560" stroke-width="0.7"/>
+              <circle cx="22" cy="22" r="2" fill="#C9A96E" opacity="0.9"/>
+            </svg>
+          </div>
+          <p class="about-quote">«нежно, но уверенно. не кричать — присутствовать»</p>
+          <span class="about-sig">твой мастер Ли</span>
+        </div>
+      </div>
+
+      <div class="about-content reveal reveal-delay-2" id="about">
+        <div class="section-eyebrow">о мастере</div>
+        <h2 class="section-title">исследую вместе,<br>а не учу <em>сверху</em></h2>
+        <div class="about-text">
+          <p>привет, я Ли. практикую тантрический йони-массаж с февраля 2024. за это время я понял одну простую вещь — тело умеет чувствовать больше, чем мы ему позволяем.</p>
+          <p>в моей работе нет спешки и давления. есть только пространство — тихое, тёплое, безопасное. место, где можно просто быть.</p>
+          <p>с 2026 года я всё больше ухожу в обучение и онлайн-практики — чтобы это пространство стало доступным для каждой.</p>
+        </div>
+        <div class="about-tags">
+          <span class="tag tag-rose">йони-хилинг</span>
+          <span class="tag tag-mauve">тантра</span>
+          <span class="tag tag-gold">обучение</span>
+          <span class="tag tag-sage">онлайн-практики</span>
+          <span class="tag tag-rose">для пар</span>
+        </div>
+        <div style="margin-top:32px;">
+          <a href="https://t.me/yonnilee" target="_blank" class="btn btn-secondary">читать канал</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider container">· · ✦ · ·</div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <div class="section-eyebrow">программы</div>
+      <h2 class="section-title">найди <em>своё</em> пространство</h2>
+      <p class="section-sub">каждая программа — это отдельный ритуал. не торопись, послушай, что откликается.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- kundaLeeny -->
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon-wrap" style="background:var(--rose-lt);">
+          <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+            <ellipse cx="22" cy="22" rx="14" ry="18" stroke="#D4819A" stroke-width="1.2" fill="none"/>
+            <ellipse cx="22" cy="22" rx="8" ry="11" stroke="#D4819A" stroke-width="0.8" fill="rgba(212,129,154,0.08)"/>
+            <path d="M22 10 C26 16 26 26 22 30 C18 26 18 16 22 10Z" fill="rgba(212,129,154,0.18)" stroke="#8B4560" stroke-width="0.7"/>
+          </svg>
+        </div>
+        <div class="service-name">kundaLeeny</div>
+        <p class="service-desc">обучение для девушек. практики, которые возвращают связь с телом — мягко, шаг за шагом.</p>
+        <div class="service-price">8 888 ₽</div>
+        <div class="service-price-note">обучающая программа</div>
+        <div class="service-divider"></div>
+        <ul class="service-features">
+          <li>онлайн-формат, в своём темпе</li>
+          <li>практики для самостоятельной работы</li>
+          <li>поддержка мастера Ли</li>
+        </ul>
+        <a href="https://t.me/tvoymasterlee" target="_blank" class="btn btn-secondary" style="width:100%;justify-content:center;">узнать подробнее</a>
+      </div>
+
+      <!-- cleoLee -->
+      <div class="service-card featured reveal reveal-delay-2">
+        <div class="service-icon-wrap" style="background:rgba(212,129,154,0.15);">
+          <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+            <path d="M26 10 A12 12 0 1 0 26 34 A8 8 0 1 1 26 10Z" fill="rgba(240,196,207,0.15)" stroke="#F0C4CF" stroke-width="1.1"/>
+            <circle cx="22" cy="24" r="7" stroke="#D4819A" stroke-width="1.0" fill="none"/>
+            <line x1="22" y1="31" x2="22" y2="37" stroke="#D4819A" stroke-width="1.0"/>
+            <line x1="19" y1="34" x2="25" y2="34" stroke="#D4819A" stroke-width="1.0"/>
+            <path d="M30 8 L28 13 L33 11Z" fill="#C9A96E" opacity="0.8"/>
+          </svg>
+        </div>
+        <div style="position:absolute;top:20px;right:20px;">
+          <span class="tag" style="background:rgba(212,129,154,0.15);color:var(--rose);font-size:9px;letter-spacing:0.12em;">популярное</span>
+        </div>
+        <div class="service-name">cleoLee</div>
+        <p class="service-desc">личный сеанс для девушек и женщин. пространство глубокого расслабления и восстановления чувствительности.</p>
+        <div class="service-price">28 888 ₽</div>
+        <div class="service-price-note">личный сеанс</div>
+        <div class="service-divider"></div>
+        <ul class="service-features">
+          <li>индивидуально, в безопасном пространстве</li>
+          <li>работа с чувствительностью тела</li>
+          <li>разбор запроса перед сеансом</li>
+        </ul>
+        <a href="https://t.me/tvoymasterlee" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">записаться</a>
+      </div>
+
+      <!-- yoniLee -->
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon-wrap" style="background:var(--gold-lt);">
+          <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+            <path d="M14 6 C14 6 18 6 20 9 C22 13 19 18 18 22 C17 26 16 28 20 32 C22 35 26 37 26 37" stroke="#C9A96E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <path d="M30 6 C30 6 26 6 24 9 C22 13 25 18 26 22 C27 26 28 28 24 32 C22 35 18 37 18 37" stroke="#C9A96E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="service-name">yoniLee</div>
+        <p class="service-desc">сеанс для пар. совместное исследование близости, доверия и новых ощущений.</p>
+        <div class="service-price">48 888 ₽</div>
+        <div class="service-price-note">сеанс для пары</div>
+        <div class="service-divider"></div>
+        <ul class="service-features">
+          <li>для двоих, в безопасной атмосфере</li>
+          <li>восстановление искры в отношениях</li>
+          <li>техники для продолжения дома</li>
+        </ul>
+        <a href="https://t.me/tvoymasterlee" target="_blank" class="btn btn-secondary" style="width:100%;justify-content:center;">узнать подробнее</a>
+      </div>
+    </div>
+
+    <!-- daoLee -->
+    <div style="margin-top:20px;" class="reveal">
+      <div class="service-card" style="display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;padding:32px 40px;">
+        <div class="service-icon-wrap" style="background:var(--mauve-lt);margin:0;">
+          <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+            <g opacity="0.9">
+              <ellipse cx="22" cy="16" rx="4.5" ry="8" fill="rgba(158,127,166,0.25)" stroke="#9E7FA6" stroke-width="0.7"/>
+              <ellipse cx="22" cy="28" rx="4.5" ry="8" fill="rgba(158,127,166,0.25)" stroke="#9E7FA6" stroke-width="0.7"/>
+              <ellipse cx="16" cy="22" rx="8" ry="4.5" fill="rgba(158,127,166,0.25)" stroke="#9E7FA6" stroke-width="0.7"/>
+              <ellipse cx="28" cy="22" rx="8" ry="4.5" fill="rgba(158,127,166,0.25)" stroke="#9E7FA6" stroke-width="0.7"/>
+            </g>
+            <circle cx="22" cy="22" r="4" fill="rgba(201,169,110,0.8)" stroke="#C9A96E" stroke-width="0.5"/>
+            <circle cx="22" cy="22" r="1.5" fill="#8B4560"/>
+          </svg>
+        </div>
+        <div>
+          <div class="service-name" style="font-size:18px;margin-bottom:4px;">daoLee — для мужчин</div>
+          <p class="service-desc" style="margin:0;font-size:12px;">обучение техникам для партнёров. как стать тем, кто умеет создавать безопасное пространство и настоящую близость.</p>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div class="service-price" style="font-size:22px;">18 888 ₽</div>
+          <a href="https://t.me/tvoymasterlee" target="_blank" class="btn btn-gold" style="margin-top:12px;white-space:nowrap;">записаться</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RITUAL -->
+<section class="ritual-section" id="ritual">
+  <svg class="ritual-bg" viewBox="0 0 1100 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="200" cy="150" rx="300" ry="200" fill="rgba(212,129,154,0.04)"/>
+    <ellipse cx="900" cy="450" rx="250" ry="180" fill="rgba(158,127,166,0.05)"/>
+    <ellipse cx="600" cy="300" rx="400" ry="260" fill="rgba(201,169,110,0.03)"/>
+    <text x="500" y="320" font-family="Cormorant Garamond,serif" font-size="180" font-weight="300" fill="rgba(212,129,154,0.04)" font-style="italic" text-anchor="middle">ритуал</text>
+  </svg>
+  <div class="container">
+    <div class="ritual-content">
+      <div class="ritual-text reveal">
+        <div class="section-eyebrow">как это устроено</div>
+        <h2 class="section-title" style="color:var(--blush);">каждый сеанс —<br>это <em>ритуал</em></h2>
+        <p class="section-sub">не просто массаж. пространство, где можно не торопиться и не объяснять — просто быть.</p>
+        <div class="ritual-steps">
+          <div class="ritual-step">
+            <span class="ritual-step-num">01</span>
+            <div class="ritual-step-body">
+              <div class="ritual-step-title">разговор перед встречей</div>
+              <p class="ritual-step-text">пишите в телеграм, рассказываете о запросе. без осуждения, без спешки.</p>
+            </div>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">02</span>
+            <div class="ritual-step-body">
+              <div class="ritual-step-title">создание пространства</div>
+              <p class="ritual-step-text">тёплый свет, шёлковые ткани, тихая музыка. тело начинает расслабляться ещё до прикосновения.</p>
+            </div>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">03</span>
+            <div class="ritual-step-body">
+              <div class="ritual-step-title">сама практика</div>
+              <p class="ritual-step-text">медленно, внимательно. темп задаёт тело — не часы.</p>
+            </div>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">04</span>
+            <div class="ritual-step-body">
+              <div class="ritual-step-title">интеграция</div>
+              <p class="ritual-step-text">время побыть в тишине. разговор, если хочется. чай, если нужно.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ritual-visual reveal reveal-delay-2">
+        <div class="ritual-orb-ring ritual-orb-ring-1"></div>
+        <div class="ritual-orb-ring ritual-orb-ring-2"></div>
+        <div class="ritual-orb-ring ritual-orb-ring-3"></div>
+        <div class="ritual-center-glow"></div>
+        <!-- Sacred Flower icon in center -->
+        <svg width="80" height="80" viewBox="0 0 44 44" fill="none" style="position:relative;z-index:2;">
+          <g opacity="0.9">
+            <ellipse cx="22" cy="16" rx="4.5" ry="8" fill="rgba(158,127,166,0.25)" stroke="#9E7FA6" stroke-width="0.7"/>
+            <ellipse cx="22" cy="28" rx="4.5" ry="8" fill="rgba(158,127,166,0.25)" stroke="#9E7FA6" stroke-width="0.7"/>
+            <ellipse cx="16" cy="22" rx="8" ry="4.5" fill="rgba(158,127,166,0.25)" stroke="#9E7FA6" stroke-width="0.7"/>
+            <ellipse cx="28" cy="22" rx="8" ry="4.5" fill="rgba(158,127,166,0.25)" stroke="#9E7FA6" stroke-width="0.7"/>
+            <ellipse cx="17" cy="17" rx="4.5" ry="8" transform="rotate(45 17 17)" fill="rgba(212,129,154,0.15)" stroke="#D4819A" stroke-width="0.6"/>
+            <ellipse cx="27" cy="27" rx="4.5" ry="8" transform="rotate(45 27 27)" fill="rgba(212,129,154,0.15)" stroke="#D4819A" stroke-width="0.6"/>
+            <ellipse cx="27" cy="17" rx="4.5" ry="8" transform="rotate(-45 27 17)" fill="rgba(212,129,154,0.15)" stroke="#D4819A" stroke-width="0.6"/>
+            <ellipse cx="17" cy="27" rx="4.5" ry="8" transform="rotate(-45 17 27)" fill="rgba(212,129,154,0.15)" stroke="#D4819A" stroke-width="0.6"/>
+          </g>
+          <circle cx="22" cy="22" r="4" fill="rgba(201,169,110,0.8)" stroke="#C9A96E" stroke-width="0.5"/>
+          <circle cx="22" cy="22" r="1.5" fill="#8B4560"/>
+        </svg>
+        <!-- Floating dots on rings -->
+        <div class="ritual-dot" style="top:50%;left:calc(50% + 160px);transform:translateY(-50%);"></div>
+        <div class="ritual-dot" style="top:calc(50% - 120px);left:50%;transform:translateX(-50%);background:var(--gold);"></div>
+        <div class="ritual-dot" style="bottom:calc(50% - 80px);right:calc(50% - 80px);background:var(--mauve);"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <div class="section-eyebrow">отзывы</div>
+      <h2 class="section-title">что говорят <em>дорогая Женщина</em></h2>
+    </div>
+  </div>
+  <div class="testimonials-track-wrap">
+    <div class="testimonials-track" id="testiTrack">
+      <!-- Cards x2 for seamless loop -->
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«я не ожидала, что буду плакать от того, что наконец-то чувствую своё тело. спасибо, Ли»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">М</div>
+          <div><div class="testi-name">Марина</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«после антидепрессантов казалось, что чувствительность ушла навсегда. оказывается — нет»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">А</div>
+          <div><div class="testi-name">Аня</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«пришла потому что "просто хотела попробовать что-то новое". ушла другой»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">К</div>
+          <div><div class="testi-name">Катя</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«это не эротический массаж — это что-то совсем другое. это о встрече с собой»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">В</div>
+          <div><div class="testi-name">Виолетта</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«мы с мужем давно потеряли искру. после сеанса для пар — она вернулась»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">С</div>
+          <div><div class="testi-name">Соня</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«жила в голове, не чувствовала тела. теперь каждый день немного иначе»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">А</div>
+          <div><div class="testi-name">Анна</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <!-- Duplicate for seamless scroll -->
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«я не ожидала, что буду плакать от того, что наконец-то чувствую своё тело. спасибо, Ли»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">М</div>
+          <div><div class="testi-name">Марина</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«после антидепрессантов казалось, что чувствительность ушла навсегда. оказывается — нет»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">А</div>
+          <div><div class="testi-name">Аня</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«пришла потому что "просто хотела попробовать что-то новое". ушла другой»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">К</div>
+          <div><div class="testi-name">Катя</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«это не эротический массаж — это что-то совсем другое. это о встрече с собой»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">В</div>
+          <div><div class="testi-name">Виолетта</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«мы с мужем давно потеряли искру. после сеанса для пар — она вернулась»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">С</div>
+          <div><div class="testi-name">Соня</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«жила в голове, не чувствовала тела. теперь каждый день немного иначе»</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">А</div>
+          <div><div class="testi-name">Анна</div><div class="testi-role">Москва</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONLINE -->
+<section class="online-section" id="online">
+  <div class="container">
+    <div class="online-grid">
+      <div class="online-content reveal">
+        <div class="section-eyebrow">онлайн-формат</div>
+        <h2 class="section-title">без границ<br>и <em>расстояний</em></h2>
+        <p class="section-sub">с 2026 года практики стали доступны онлайн — из любой точки мира. в своём ритме, в своём пространстве.</p>
+        <div class="online-features">
+          <div class="online-feature">
+            <div class="online-feature-icon">
+              <svg width="22" height="22" viewBox="0 0 44 44" fill="none">
+                <circle cx="22" cy="22" r="14" stroke="#D4819A" stroke-width="1.2" fill="none"/>
+                <path d="M16 22 L20 26 L28 18" stroke="#D4819A" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <div>
+              <div class="online-feature-title">закрытый обучающий канал</div>
+              <p class="online-feature-text">практики, материалы и живое общение с мастером Ли — по подписке.</p>
+            </div>
+          </div>
+          <div class="online-feature">
+            <div class="online-feature-icon">
+              <svg width="22" height="22" viewBox="0 0 44 44" fill="none">
+                <rect x="8" y="14" width="28" height="20" rx="4" stroke="#D4819A" stroke-width="1.2" fill="none"/>
+                <path d="M19 22 L25 25 L19 28Z" fill="#D4819A"/>
+              </svg>
+            </div>
+            <div>
+              <div class="online-feature-title">онлайн-сессии</div>
+              <p class="online-feature-text">индивидуальная работа с запросом — через видеосвязь.</p>
+            </div>
+          </div>
+          <div class="online-feature">
+            <div class="online-feature-icon">
+              <svg width="22" height="22" viewBox="0 0 44 44" fill="none">
+                <path d="M22 8 L26 18 H36 L28 24 L31 34 L22 28 L13 34 L16 24 L8 18 H18Z" stroke="#D4819A" stroke-width="1.1" fill="rgba(212,129,154,0.1)"/>
+              </svg>
+            </div>
+            <div>
+              <div class="online-feature-title">ретриты и мастер-классы</div>
+              <p class="online-feature-text">очные и онлайн-интенсивы. следи за анонсами в канале.</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://t.me/yonnilee" target="_blank" class="btn btn-primary">канал @yonnilee</a>
+          <a href="https://t.me/tvoymasterlee" target="_blank" class="btn btn-secondary">написать Ли</a>
+        </div>
+      </div>
+
+      <div class="online-visual reveal reveal-delay-2">
+        <!-- Decorative glow behind phone -->
+        <div style="position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(212,129,154,0.18),transparent);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+        <div class="online-phone">
+          <div class="phone-notch"></div>
+          <div class="phone-content">
+            <div class="phone-time">сегодня, 19:32</div>
+            <div class="phone-msg them">привет, Ли. можно записаться?</div>
+            <div class="phone-msg">привет, дорогая Женщина 🌸 конечно. расскажи немного о себе и своём запросе — без спешки</div>
+            <div class="phone-msg them">я просто хочу снова почувствовать тело...</div>
+            <div class="phone-msg">это хороший запрос. честный. давай поговорим ✨</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <svg class="cta-bg-elements" viewBox="0 0 1100 400" preserveAspectRatio="xMidYMid slice">
+    <ellipse cx="150" cy="100" rx="220" ry="160" fill="rgba(212,129,154,0.06)"/>
+    <ellipse cx="950" cy="300" rx="180" ry="130" fill="rgba(201,169,110,0.06)"/>
+    <ellipse cx="550" cy="200" rx="350" ry="200" fill="rgba(158,127,166,0.04)"/>
+    <text x="550" y="230" font-family="Cormorant Garamond,serif" font-size="200" font-weight="300" fill="rgba(255,255,255,0.025)" font-style="italic" text-anchor="middle">ли</text>
+  </svg>
+  <div class="cta-content reveal">
+    <div class="cta-eyebrow">· · ✦ · ·</div>
+    <h2 class="cta-title">готова сделать<br>первый <em>шаг?</em></h2>
+    <p class="cta-sub">напиши мне — просто "привет". дальше разберёмся вместе, без давления и спешки.</p>
+    <div class="cta-actions">
+      <a href="https://t.me/tvoymasterlee" target="_blank" class="btn btn-light">написать @tvoymasterlee</a>
+      <a href="https://t.me/yonnilee" target="_blank" class="btn btn-outline-light">читать канал</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">yonni<span>lee</span></div>
+        <p class="footer-brand-text">практика тантрического йони-массажа и обучения. мягко. без давления. с любовью.</p>
+        <div class="footer-social">
+          <a href="https://t.me/yonnilee" target="_blank" class="social-btn" title="Telegram канал">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.117 14.8l-2.963-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.702.786z"/></svg>
+          </a>
+          <a href="https://t.me/tvoymasterlee" target="_blank" class="social-btn" title="Написать мастеру">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">программы</div>
+        <ul class="footer-links">
+          <li><a href="#services">kundaLeeny — для девушек</a></li>
+          <li><a href="#services">cleoLee — личный сеанс</a></li>
+          <li><a href="#services">yoniLee — для пар</a></li>
+          <li><a href="#services">daoLee — для мужчин</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">связь</div>
+        <ul class="footer-links">
+          <li><a href="https://t.me/tvoymasterlee" target="_blank">@tvoymasterlee</a></li>
+          <li><a href="https://t.me/yonnilee" target="_blank">канал @yonnilee</a></li>
+          <li><a href="https://yonnilee.ru" target="_blank">yonnilee.ru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024–2026 yonnilee · с любовью и нежностью</div>
+      <div class="footer-ornament">· · ✦ · ·</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Animated ritual dots
+  function animateDots() {
+    const dots = document.querySelectorAll('.ritual-dot');
+    let angle = 0;
+    setInterval(() => {
+      angle += 0.5;
+      if (dots[0]) {
+        dots[0].style.left = (50 + 36 * Math.cos(angle * Math.PI / 180)) + '%';
+        dots[0].style.top  = (50 + 36 * Math.sin(angle * Math.PI / 180)) + '%';
+      }
+      if (dots[1]) {
+        dots[1].style.left = (50 + 27 * Math.cos((-angle * 1.4) * Math.PI / 180)) + '%';
+        dots[1].style.top  = (50 + 27 * Math.sin((-angle * 1.4) * Math.PI / 180)) + '%';
+      }
+      if (dots[2]) {
+        dots[2].style.left = (50 + 18 * Math.cos((angle * 2.1) * Math.PI / 180)) + '%';
+        dots[2].style.top  = (50 + 18 * Math.sin((angle * 2.1) * Math.PI / 180)) + '%';
+      }
+    }, 16);
+  }
+  animateDots();
+
+  // Smooth scroll for anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const el = document.querySelector(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
