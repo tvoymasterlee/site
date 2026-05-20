@@ -1249,16 +1249,50 @@ function toggleFaq(btn) {
 }
 
 /* FORM */
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = this.querySelector('.form-submit');
+  const inputs = this.querySelectorAll('.form-input');
+
+  const name   = inputs[0].value.trim();
+  const ad     = inputs[1].value || '—';
+  const orgasm = inputs[2].value || '—';
+  const solo   = inputs[3].value || '—';
+  const tg     = inputs[4].value.trim();
+
+  const text =
+    `🌸 Новая заявка с yonnilee.ru\n\n` +
+    `👤 Имя и возраст: ${name}\n` +
+    `💊 Антидепрессанты: ${ad}\n` +
+    `💞 Оргазм с партнёром: ${orgasm}\n` +
+    `🌿 Самостоятельно: ${solo}\n` +
+    `✈️ Telegram: ${tg}`;
+
   btn.textContent = 'отправляем...';
   btn.disabled = true;
-  setTimeout(() => {
-    window.open('https://t.me/tvoymasterlee', '_blank');
-    btn.textContent = 'анкета отправлена ✓';
-    btn.style.background = '#6E8F69';
-  }, 700);
+
+  try {
+    const res = await fetch(
+      `https://api.telegram.org/bot8304294444:AAHrm4xkOJYvhqVmZmEE82uaRyKR-iQ4BHo/sendMessage`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: '5773993047', text, parse_mode: 'HTML' })
+      }
+    );
+    const data = await res.json();
+    if (data.ok) {
+      btn.textContent = 'анкета отправлена ✓';
+      btn.style.background = '#6E8F69';
+      this.reset();
+    } else {
+      throw new Error(data.description);
+    }
+  } catch (err) {
+    btn.textContent = 'ошибка — напишите напрямую';
+    btn.style.background = '#c0687e';
+    btn.disabled = false;
+  }
 });
 
 /* RITUAL CANVAS */
