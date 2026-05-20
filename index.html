@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
+<!-- saved from url=(0024)https://www.yonnilee.ru/ -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./yonnilee_files/tag_phono.js.Без названия" type="text/javascript" charset="utf-8" async=""></script><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Йони массаж в Москве — тантрический йони-хилинг для женщин и пар, не салон, а пространсво нежности</title>
   <meta name="description" content="Йони массаж в Москве — тантрический йони-хилинг для девушек и пар. Помогает вернуть чувствительность тела, убрать сексуальные блоки, восстановить либидо. Не эротический, а терапевтический. Мастер Ли — 5 лет практики. Запись: @tvoymasterlee">
@@ -19,7 +21,7 @@
   <link rel="apple-touch-icon" href="https://static.tildacdn.com/tild3630-3630-4337-b132-346566313035/--1.png">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 
-  <script type="application/ld+json">
+  <script async="" src="./yonnilee_files/tag.js.Без названия"></script><script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
@@ -55,23 +57,40 @@
   </script>
 
 <style>
-/* ── TOKENS ── */
+/* ── TOKENS (Yoni Design System) ── */
 :root {
-  --bg:      #faf8f5;
-  --bg2:     #f3f0ea;
-  --bg3:     #edeae2;
+  /* Yoni DS palette */
+  --rose:     #D4819A;
+  --rose-lt:  #F4D6DF;
+  --rose-dk:  #8B4560;
+  --blush:    #F0C4CF;
+  --mauve:    #9E7FA6;
+  --mauve-lt: #E8DCF0;
+  --gold:     #C9A96E;
+  --gold-lt:  #F5EDD8;
+  --cream:    #FAF4EF;
+  --sand:     #E8D8CA;
+  --mist:     #F7F2F9;
+  --ink:      #2A1F2D;
+  --ink-md:   #6B5773;
+
+  /* Site aliases → mapped to Yoni DS */
+  --bg:      #fdf8f6;        /* теплее cream */
+  --bg2:     #f9f0f4;        /* rose-lt оттенок */
+  --bg3:     #f2e8ed;
   --card:    #ffffff;
-  --accent:  #9B6B84;
-  --accent2: #D4819A;
-  --gold:    #C9A96E;
-  --text:    #2A1F2D;
-  --muted:   #6b5773;
-  --border:  rgba(155,107,132,0.22);
-  --border2: rgba(42,31,45,0.09);
+  --accent:  var(--rose);    /* было #D4819A → нежная роза */
+  --accent2: var(--blush);   /* было #D4819A → blush #F0C4CF */
+  --text:    var(--ink);
+  --muted:   var(--ink-md);
+  --border:  rgba(212,129,154,0.20);   /* rose с прозрачностью */
+  --border2: rgba(212,129,154,0.10);
   --serif:   'Cormorant Garamond', Georgia, serif;
   --sans:    'Jost', sans-serif;
-  --radius:  16px;
+  --radius:  20px;           /* чуть мягче */
   --section-pad: clamp(80px, 10vw, 130px);
+  --shadow:       0 4px 24px rgba(212,129,154,0.10);
+  --shadow-hover: 0 8px 40px rgba(212,129,154,0.18);
 }
 
 /* ── RESET ── */
@@ -81,7 +100,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
 body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; font-size: 16px; line-height: 1.75; }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--rose-lt); border-radius: 4px; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 
@@ -95,8 +114,8 @@ p  { color: var(--muted); font-size: clamp(14px, 1.5vw, 15px); }
 /* ── LAYOUT ── */
 .container { max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 60px); }
 .section   { padding: var(--section-pad) 0; position: relative; }
-.section-label { font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
-.divider { width: 40px; height: 1px; background: var(--accent); margin: 1.8rem 0; }
+.section-label { font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.2rem; }
+.divider { width: 40px; height: 1px; background: var(--rose); margin: 1.8rem 0; }
 .divider.center { margin: 1.8rem auto; }
 .text-center { text-align: center; }
 
@@ -109,63 +128,66 @@ p  { color: var(--muted); font-size: clamp(14px, 1.5vw, 15px); }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
 /* ── BUTTONS ── */
-.btn { display: inline-block; padding: 14px 32px; font-family: var(--sans); font-size: 12px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; transition: all 0.3s ease; border-radius: var(--radius); }
-.btn-primary { background: var(--accent); color: #FAF4EF !important; }
-.btn-primary:hover { background: #7a5268; transform: translateY(-1px); }
-.btn-outline { background: transparent; color: #8B4560 !important; border: 1px solid var(--border); }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent) !important; }
-.btn-gold { background: var(--gold); color: #FAF4EF !important; }
-.btn-gold:hover { background: #b08a52; transform: translateY(-1px); }
+.btn { display: inline-block; padding: 14px 32px; font-family: var(--sans); font-size: 12px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; transition: all 0.3s ease; border-radius: var(--r-pill, 100px); }
+.btn-primary { background: var(--rose); color: #fff !important; }
+.btn-primary:hover { background: var(--rose-dk); transform: translateY(-1px); box-shadow: var(--shadow-hover); }
+.btn-outline { background: transparent; color: var(--rose) !important; border: 1px solid var(--border); }
+.btn-outline:hover { border-color: var(--rose); background: var(--rose-lt); }
+.btn-gold { background: var(--gold); color: #fff !important; }
+.btn-gold:hover { background: #b08a52; transform: translateY(-1px); box-shadow: var(--shadow-hover); }
 
 /* ── NAV ── */
 nav { position: fixed; top:0; left:0; right:0; z-index:100; padding: 20px 0; transition: background 0.4s ease, padding 0.4s ease; }
 nav.scrolled { background: rgba(250,248,245,0.94); backdrop-filter: blur(14px); padding: 13px 0; border-bottom: 1px solid var(--border2); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { font-family: var(--serif); font-size: 1.65rem; font-style: italic; color: #9E7FA6 !important; text-decoration: none; }
-.nav-logo span { color: var(--accent); }
+.nav-logo { font-family: var(--serif); font-size: 1.65rem; font-style: italic; color: var(--mauve) !important; text-decoration: none; }
+.nav-logo span { color: var(--rose); }
 .nav-links { display: flex; gap: 28px; list-style: none; }
-.nav-links a { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: #9E7FA6 !important; text-decoration: none; transition: color 0.3s; }
-.nav-links a:hover { color: var(--accent) !important; }
+.nav-links a { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--mauve) !important; text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--rose) !important; }
 .nav-cta { padding: 10px 24px; font-size: 12px; }
 .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
 .burger span { display: block; width: 22px; height: 1px; background: var(--text); transition: all 0.3s; }
 .mobile-menu { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
 .mobile-menu.open { display: flex; }
 .mobile-menu a { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--text); text-decoration: none; transition: color 0.25s; }
-.mobile-menu a:hover { color: var(--accent); }
+.mobile-menu a:hover { color: var(--rose); }
 @media(max-width:768px){ .nav-links,.nav-cta { display:none; } .burger { display:flex; } }
 
 /* ── HERO ── */
 #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
 .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 130px 60px 80px 60px; position: relative; z-index: 2; }
-.hero-eyebrow { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
-.hero-eyebrow::before { content:''; display:block; width:24px; height:0.5px; background: var(--accent); }
+.hero-eyebrow { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.hero-eyebrow::before { content:''; display:block; width:24px; height:0.5px; background: var(--rose); }
 .hero-title { color: var(--text); margin-bottom: 20px; }
-.hero-title em { font-style: italic; color: var(--accent); }
+.hero-title em { font-style: italic; color: var(--rose); }
 .hero-sub { color: var(--muted); max-width: 380px; margin-bottom: 36px; font-size: 15px; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.hero-notice { margin-top: 28px; font-size: 12px; color: var(--muted); opacity: 0.7; max-width: 340px; line-height: 1.6; padding: 14px 18px; border: 1px solid var(--border2); border-radius: var(--radius); background: var(--bg2); }
-.hero-notice strong { color: var(--accent); font-weight: 400; }
-.hero-right { position: relative; overflow: hidden; background: #f7eff4; }
+.hero-notice { margin-top: 28px; font-size: 12px; color: var(--muted); opacity: 0.85; max-width: 340px; line-height: 1.6; padding: 14px 18px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--mist); }
+.hero-notice strong { color: var(--rose); font-weight: 400; }
+.hero-right { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--rose-lt) 0%, var(--mist) 60%, var(--mauve-lt) 100%); }
+.hero-video-wrap { position: absolute; inset: 0; }
+.hero-video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* canvas-wrap kept for ritual canvas */
 .hero-canvas-wrap { position: absolute; inset: 0; }
 .hero-canvas-wrap canvas { width: 100%; height: 100%; display: block; }
-.hero-stats { position:absolute;bottom:44px;left:60px;display:flex;gap:36px; }
-.stat-num { font-family:var(--serif);font-size:26px;font-weight:300;color:var(--accent); }
+.hero-stats { display:flex;gap:36px;margin-top:32px;flex-wrap:wrap; }
+.stat-num { font-family:var(--serif);font-size:26px;font-weight:300;color:var(--rose); }
 .stat-label { font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted); }
 @media(max-width:900px){
   #hero { grid-template-columns:1fr; min-height:auto; }
   .hero-left { padding:120px 28px 60px; }
   .hero-right { height:280px; }
-  .hero-stats { left:28px;bottom:20px;gap:24px; }
+  .hero-stats { gap:20px; }
 }
 
 /* ── WHY SECTION (переписан) ── */
 #why { background: var(--bg2); }
 .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:48px; }
-.why-card { background:var(--card); border:1px solid var(--border2); border-radius:calc(var(--radius)*1.5); padding:36px 28px; position:relative; transition: box-shadow 0.3s, transform 0.3s; }
-.why-card:hover { box-shadow:0 8px 40px rgba(155,107,132,0.10); transform:translateY(-3px); }
-.why-eyebrow { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; display:flex; align-items:center; gap:8px; }
-.why-eyebrow::before { content:''; display:block; width:16px; height:0.5px; background:var(--accent); flex-shrink:0; }
+.why-card { background:var(--card); border:1px solid var(--border2); border-radius:calc(var(--radius)*1.5); padding:36px 28px; position:relative; transition: box-shadow 0.35s cubic-bezier(0.34,1.56,0.64,1), transform 0.35s cubic-bezier(0.34,1.56,0.64,1); }
+.why-card:hover { box-shadow:var(--shadow-hover); transform:translateY(-4px); }
+.why-eyebrow { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--rose); margin-bottom:20px; display:flex; align-items:center; gap:8px; }
+.why-eyebrow::before { content:''; display:block; width:16px; height:0.5px; background:var(--rose); flex-shrink:0; }
 .why-title { font-family:var(--serif); font-size:1.35rem; color:var(--text); margin-bottom:14px; font-weight:400; line-height:1.25; }
 .why-text { font-size:13px; color:var(--muted); line-height:1.85; }
 @media(max-width:768px){ .why-grid{ grid-template-columns:1fr; } }
@@ -175,36 +197,36 @@ nav.scrolled { background: rgba(250,248,245,0.94); backdrop-filter: blur(14px); 
 .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,100px); align-items:start; }
 @media(max-width:768px){ .about-grid{ grid-template-columns:1fr; } }
 .about-text p { margin-bottom:1.2rem; font-size:15px; line-height:1.9; color:var(--muted); }
-.about-accent { color:var(--accent)!important; font-style:italic; font-family:var(--serif); font-size:1.1rem!important; }
+.about-accent { color:var(--rose)!important; font-style:italic; font-family:var(--serif); font-size:1.1rem!important; }
 .about-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
 .tag { display:inline-block; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:400; letter-spacing:0.07em; border:1px solid var(--border2); color:var(--muted); background:var(--bg2); }
-.tag.active { background:rgba(155,107,132,0.10); border-color:var(--border); color:var(--accent); }
-.tag.rose { background:rgba(155,107,132,0.10); border-color:var(--border); color:var(--accent); }
-.tag.dark { background:rgba(155,107,132,0.10); border-color:var(--border); color:var(--accent); }
-.tag.lite { background:rgba(155,107,132,0.10); border-color:var(--border); color:var(--accent); }
+.tag.active { background:var(--rose-lt); border-color:var(--border); color:var(--rose-dk); }
+.tag.rose  { background:var(--rose-lt); border-color:var(--border); color:var(--rose-dk); }
+.tag.dark  { background:var(--rose-lt); border-color:var(--border); color:var(--rose-dk); }
+.tag.lite  { background:var(--rose-lt); border-color:var(--border); color:var(--rose-dk); }
 .about-stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:40px; }
 .about-stat-card { background:var(--bg2); border:1px solid var(--border2); border-radius:var(--radius); padding:clamp(20px,3vw,32px); }
-.about-stat-num { font-family:var(--serif); font-size:clamp(2.2rem,4vw,3.5rem); font-weight:300; color:var(--accent); line-height:1; margin-bottom:6px; }
+.about-stat-num { font-family:var(--serif); font-size:clamp(2.2rem,4vw,3.5rem); font-weight:300; color:var(--rose); line-height:1; margin-bottom:6px; }
 .about-stat-label { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }
-.about-quote { background:var(--bg2); border-left:3px solid var(--accent); border-radius:var(--radius); padding:28px 32px; margin-top:28px; }
+.about-quote { background:var(--mist); border-left:3px solid var(--rose); border-radius:var(--radius); padding:28px 32px; margin-top:28px; }
 .about-quote p { font-family:var(--serif); font-style:italic; font-size:1.05rem; color:var(--text); line-height:1.8; margin:0; }
 .about-quote span { display:block; margin-top:12px; font-size:11px; letter-spacing:0.1em; color:var(--muted); }
 .session-includes { margin-top:28px; padding:24px 28px; border:1px solid var(--border2); border-radius:var(--radius); background:var(--card); }
-.session-includes-title { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+.session-includes-title { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--rose); margin-bottom:16px; }
 .session-includes ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
 .session-includes li { font-size:13px; color:var(--muted); display:flex; align-items:flex-start; gap:10px; }
-.session-includes li::before { content:'—'; color:var(--accent); flex-shrink:0; }
+.session-includes li::before { content:'—'; color:var(--rose); flex-shrink:0; }
 
 /* ── CASES ── */
 #cases { background: var(--bg2); }
 .cases-intro { max-width:600px; margin:0 auto 56px; text-align:center; }
 .cases-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
 .case-card { background:var(--card); border:1px solid var(--border2); border-radius:calc(var(--radius)*1.5); padding:32px 28px; transition:box-shadow 0.3s, transform 0.3s; }
-.case-card:hover { box-shadow:0 6px 32px rgba(155,107,132,0.09); transform:translateY(-2px); }
+.case-card:hover { box-shadow:var(--shadow-hover); transform:translateY(-2px); }
 .case-name { font-family:var(--serif); font-size:1.2rem; color:var(--text); font-weight:400; margin-bottom:4px; }
-.case-problem { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; }
+.case-problem { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--rose); margin-bottom:14px; }
 .case-text { font-family:var(--serif); font-style:italic; font-size:14px; color:var(--muted); line-height:1.85; }
-.case-result { margin-top:16px; font-size:12px; color:var(--accent); font-weight:400; padding-top:14px; border-top:1px solid var(--border2); }
+.case-result { margin-top:16px; font-size:12px; color:var(--rose); font-weight:400; padding-top:14px; border-top:1px solid var(--border2); }
 @media(max-width:768px){ .cases-grid{ grid-template-columns:1fr; } }
 
 /* ── PROGRAMS ── */
@@ -212,28 +234,28 @@ nav.scrolled { background: rgba(250,248,245,0.94); backdrop-filter: blur(14px); 
 .programs-header { text-align:center; max-width:560px; margin:0 auto 56px; }
 .programs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .program-card { background:var(--card); border:1px solid var(--border2); border-radius:calc(var(--radius)*1.5); padding:clamp(28px,3vw,40px) clamp(22px,2.5vw,32px); display:flex; flex-direction:column; gap:14px; transition:box-shadow 0.3s, transform 0.3s; position:relative; overflow:hidden; }
-.program-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform 0.4s ease; border-radius:calc(var(--radius)*1.5) calc(var(--radius)*1.5) 0 0; }
-.program-card:hover { box-shadow:0 8px 40px rgba(155,107,132,0.12); transform:translateY(-3px); }
+.program-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background: linear-gradient(90deg, var(--rose), var(--blush)); transform:scaleX(0); transform-origin:left; transition:transform 0.4s ease; border-radius:calc(var(--radius)*1.5) calc(var(--radius)*1.5) 0 0; }
+.program-card:hover { box-shadow:var(--shadow-hover); transform:translateY(-3px); }
 .program-card:hover::before { transform:scaleX(1); }
-.program-card.featured { background:var(--text); border-color:transparent; }
-.program-card.featured .program-name, .program-card.featured h3 { color:#F0C4CF; }
+.program-card.featured { background:var(--ink); border-color:transparent; }
+.program-card.featured .program-name, .program-card.featured h3 { color:var(--blush); }
 .program-card.featured .program-price { color:var(--gold); }
 .program-card.featured .program-desc, .program-card.featured .program-list li { color:rgba(240,196,207,0.55); }
-.program-card.featured .program-list li::before { color:var(--accent2); }
-.program-card.featured .section-label { color:rgba(212,129,154,0.7); }
-.program-tag { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); background:rgba(155,107,132,0.09); border-radius:100px; display:inline-block; padding:4px 12px; align-self:flex-start; }
+.program-card.featured .program-list li::before { color:var(--rose); }
+.program-card.featured .section-label { color:rgba(244,214,223,0.7); }
+.program-tag { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--rose); background:var(--rose-lt); border-radius:100px; display:inline-block; padding:4px 12px; align-self:flex-start; }
 .program-name { font-family:var(--serif); font-size:clamp(1.2rem,2vw,1.5rem); font-weight:400; color:var(--text); font-style:italic; line-height:1.2; }
-.program-price { font-family:var(--serif); font-size:clamp(1.6rem,2.8vw,2.1rem); font-weight:300; color:var(--accent); }
+.program-price { font-family:var(--serif); font-size:clamp(1.6rem,2.8vw,2.1rem); font-weight:300; color:var(--rose); }
 .program-desc { font-size:13px; line-height:1.8; color:var(--muted); }
 .program-list { list-style:none; display:flex; flex-direction:column; gap:7px; margin-top:4px; flex:1; }
 .program-list li { font-size:13px; color:var(--muted); display:flex; align-items:flex-start; gap:8px; }
-.program-list li::before { content:'—'; color:var(--accent); flex-shrink:0; font-size:12px; margin-top:2px; }
-.program-link { font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-top:auto; transition:gap 0.3s; }
+.program-list li::before { content:'—'; color:var(--rose); flex-shrink:0; font-size:12px; margin-top:2px; }
+.program-link { font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--rose); text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-top:auto; transition:gap 0.3s; }
 .program-link::after { content:'→'; }
 .program-link:hover { gap:12px; }
-.program-link-white { color:#F0C4CF; }
+.program-link-white { color:var(--blush); }
 .program-link-white:hover { color:#fff; }
-.program-badge { position:absolute; top:16px; right:16px; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; background:rgba(212,129,154,0.15); color:var(--accent2); border-radius:100px; padding:4px 10px; }
+.program-badge { position:absolute; top:16px; right:16px; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; background:var(--rose-lt); color:var(--rose-dk); border-radius:100px; padding:4px 10px; }
 .program-wide {
   grid-column: 1/-1;
   display: flex !important;
@@ -279,9 +301,9 @@ nav.scrolled { background: rgba(250,248,245,0.94); backdrop-filter: blur(14px); 
 }
 .cert-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 100px); align-items: center; }
 @media(max-width:768px){ .cert-inner { grid-template-columns: 1fr; } }
-.cert-label { color: var(--accent2) !important; }
-.cert-title { color: #F0C4CF; margin-top: 8px; }
-.cert-title em { font-style: italic; color: var(--accent2); }
+.cert-label { color: var(--blush) !important; }
+.cert-title { color: var(--rose-lt); margin-top: 8px; }
+.cert-title em { font-style: italic; color: var(--blush); }
 .cert-text { color: rgba(240,196,207,0.55); font-size: 15px; line-height: 1.9; margin-top: 20px; max-width: 420px; }
 .cert-text p { color: rgba(240,196,207,0.55); margin-bottom: 1rem; }
 .cert-card {
@@ -297,33 +319,33 @@ nav.scrolled { background: rgba(250,248,245,0.94); backdrop-filter: blur(14px); 
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent2), var(--gold));
+  background: linear-gradient(90deg, var(--blush), var(--gold));
   border-radius: calc(var(--radius)*2) calc(var(--radius)*2) 0 0;
 }
 .cert-card-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(212,129,154,0.5); margin-bottom: 20px; }
 .cert-formats { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
 .cert-format { display: flex; align-items: flex-start; gap: 14px; }
-.cert-format-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); flex-shrink: 0; margin-top: 6px; }
+.cert-format-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blush); flex-shrink: 0; margin-top: 6px; }
 .cert-format-text { font-size: 13px; color: rgba(240,196,207,0.65); line-height: 1.7; }
-.cert-format-text strong { color: #F0C4CF; font-weight: 400; }
-.cert-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--accent2); color: #fff !important; text-decoration: none; padding: 14px 28px; border-radius: var(--radius); font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; transition: all 0.3s; }
-.cert-cta:hover { background: #c0687e; transform: translateY(-2px); }
+.cert-format-text strong { color: var(--blush); font-weight: 400; }
+.cert-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--rose); color: #fff !important; text-decoration: none; padding: 14px 28px; border-radius: var(--radius); font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; transition: all 0.3s; }
+.cert-cta:hover { background: var(--rose-dk); transform: translateY(-2px); }
 .cert-sub { display: block; margin-top: 14px; font-size: 12px; color: rgba(240,196,207,0.3); }
 
 /* ── RITUAL ── */
 #ritual { background: var(--text); }
 .ritual-content { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
 @media(max-width:768px){ .ritual-content{ grid-template-columns:1fr; gap:48px; } }
-.ritual-label { color:var(--accent2)!important; }
-.ritual-title { color:#F0C4CF; }
-.ritual-sub { color:rgba(240,196,207,0.55); max-width:400px; }
+.ritual-label { color:var(--blush)!important; }
+.ritual-title { color:var(--rose-lt); }
+.ritual-sub { color:rgba(244,214,223,0.55); max-width:400px; }
 .ritual-steps { display:flex; flex-direction:column; gap:0; margin-top:40px; }
 .ritual-step { display:flex; gap:20px; padding:20px 0; border-bottom:0.5px solid rgba(255,255,255,0.06); transition:all 0.3s; }
 .ritual-step:last-child { border-bottom:none; }
-.ritual-step-num { font-family:var(--serif); font-size:3rem; font-weight:300; color:rgba(212,129,154,0.18); line-height:1; flex-shrink:0; width:44px; transition:color 0.3s; }
-.ritual-step:hover .ritual-step-num { color:var(--accent2); }
-.ritual-step-title { font-family:var(--serif); font-size:1.1rem; color:#F0C4CF; margin-bottom:4px; font-weight:400; }
-.ritual-step-text { font-size:13px; color:rgba(240,196,207,0.5); line-height:1.7; }
+.ritual-step-num { font-family:var(--serif); font-size:3rem; font-weight:300; color:rgba(244,214,223,0.15); line-height:1; flex-shrink:0; width:44px; transition:color 0.3s; }
+.ritual-step:hover .ritual-step-num { color:var(--blush); }
+.ritual-step-title { font-family:var(--serif); font-size:1.1rem; color:var(--rose-lt); margin-bottom:4px; font-weight:400; }
+.ritual-step-text { font-size:13px; color:rgba(244,214,223,0.5); line-height:1.7; }
 .ritual-visual { height:420px; display:flex; align-items:center; justify-content:center; position:relative; }
 
 /* ── REVIEWS ── */
@@ -335,12 +357,12 @@ nav.scrolled { background: rgba(250,248,245,0.94); backdrop-filter: blur(14px); 
 .reviews-track { display:flex; gap:18px; animation:marquee 32s linear infinite; width:max-content; will-change:transform; }
 .reviews-track:hover { animation-play-state:paused; }
 .review-card { width:300px; flex-shrink:0; background:var(--card); border:1px solid var(--border2); border-radius:calc(var(--radius)*1.5); padding:28px 24px; display:flex; flex-direction:column; gap:16px; transition:transform 0.4s,box-shadow 0.4s; }
-.review-card:hover { transform:translateY(-4px); box-shadow:0 6px 32px rgba(155,107,132,0.10); }
+.review-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-hover); }
 .review-stars { color:var(--gold); font-size:11px; letter-spacing:2px; }
-.review-problem { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); }
+.review-problem { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--rose); }
 .review-text { font-family:var(--serif); font-style:italic; font-size:14px; color:var(--muted); line-height:1.85; flex:1; }
 .review-meta { border-top:1px solid var(--border2); padding-top:14px; display:flex; align-items:center; gap:10px; }
-.review-avatar { width:32px;height:32px; border-radius:50%; background:linear-gradient(135deg,rgba(212,129,154,0.25),rgba(158,127,166,0.25)); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:14px; color:var(--accent); flex-shrink:0; }
+.review-avatar { width:32px;height:32px; border-radius:50%; background:linear-gradient(135deg,rgba(212,129,154,0.25),rgba(158,127,166,0.25)); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:14px; color:var(--rose); flex-shrink:0; }
 .review-name { font-size:12px; font-weight:400; color:var(--text); }
 .review-city { font-size:11px; color:var(--muted); opacity:0.6; }
 
@@ -352,7 +374,7 @@ nav.scrolled { background: rgba(250,248,245,0.94); backdrop-filter: blur(14px); 
 .faq-item { border-bottom:1px solid var(--border2); }
 .faq-question { width:100%; background:none; border:none; padding:20px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:20px; text-align:left; }
 .faq-q-text { font-family:var(--serif); font-size:clamp(1rem,1.6vw,1.1rem); color:var(--text); font-weight:400; line-height:1.4; }
-.faq-icon { color:var(--accent); font-size:1.3rem; flex-shrink:0; transition:transform 0.3s; font-weight:300; font-family:var(--sans); line-height:1; }
+.faq-icon { color:var(--rose); font-size:1.3rem; flex-shrink:0; transition:transform 0.3s; font-weight:300; font-family:var(--sans); line-height:1; }
 .faq-item.open .faq-icon { transform:rotate(45deg); }
 .faq-answer { overflow:hidden; max-height:0; transition:max-height 0.4s cubic-bezier(.16,1,.3,1); }
 .faq-item.open .faq-answer { max-height:400px; }
@@ -363,35 +385,35 @@ nav.scrolled { background: rgba(250,248,245,0.94); backdrop-filter: blur(14px); 
 .faq-process-list li { display:flex; gap:20px; align-items:flex-start; }
 .faq-process-q { font-family:var(--serif); font-size:1rem; color:var(--text); font-weight:400; margin-bottom:4px; }
 .faq-process-a { font-size:13px; color:var(--muted); line-height:1.8; }
-.faq-process-num { font-family:var(--serif); font-size:1.8rem; color:var(--accent); opacity:0.3; line-height:1; flex-shrink:0; width:32px; }
+.faq-process-num { font-family:var(--serif); font-size:1.8rem; color:var(--rose); opacity:0.3; line-height:1; flex-shrink:0; width:32px; }
 
 /* ── FOR WHOM ── */
 #forwhom { background: var(--bg2); }
 .forwhom-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:48px; }
 .forwhom-card { background:var(--card); border:1px solid var(--border2); border-radius:calc(var(--radius)*1.5); padding:32px 24px; transition:box-shadow 0.3s,transform 0.3s; }
-.forwhom-card:hover { box-shadow:0 6px 28px rgba(155,107,132,0.09); transform:translateY(-3px); }
-.forwhom-icon { font-family:var(--serif); font-size:2rem; color:var(--accent); opacity:0.4; margin-bottom:16px; line-height:1; }
+.forwhom-card:hover { box-shadow:var(--shadow-hover); transform:translateY(-3px); }
+.forwhom-icon { font-family:var(--serif); font-size:2rem; color:var(--rose); opacity:0.4; margin-bottom:16px; line-height:1; }
 .forwhom-title { font-family:var(--serif); font-size:1.15rem; color:var(--text); font-weight:400; margin-bottom:8px; }
 .forwhom-text { font-size:13px; color:var(--muted); line-height:1.8; }
 @media(max-width:768px){ .forwhom-grid{ grid-template-columns:1fr; } }
 
 /* ── CONTACT ── */
 #contact { background: var(--bg); position:relative; overflow:hidden; }
-#contact::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:700px; height:700px; background:radial-gradient(circle,rgba(155,107,132,0.04) 0%,transparent 70%); pointer-events:none; }
+#contact::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:700px; height:700px; background:radial-gradient(circle,rgba(212,129,154,0.04) 0%,transparent 70%); pointer-events:none; }
 .contact-inner { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:start; }
 @media(max-width:768px){ .contact-inner{ grid-template-columns:1fr; } }
 .contact-perks { list-style:none; display:flex; flex-direction:column; gap:14px; margin-top:28px; }
 .contact-perks li { display:flex; align-items:flex-start; gap:14px; font-size:14px; color:var(--muted); line-height:1.65; }
-.perk-num { font-family:var(--serif); font-size:1rem; color:var(--accent); flex-shrink:0; width:18px; font-style:italic; }
+.perk-num { font-family:var(--serif); font-size:1rem; color:var(--rose); flex-shrink:0; width:18px; font-style:italic; }
 .contact-direct { margin-top:36px; padding:22px 26px; border:1px solid var(--border2); border-radius:var(--radius); background:var(--bg2); }
-.contact-direct-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
+.contact-direct-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--rose); margin-bottom:8px; }
 .contact-direct-link { font-family:var(--serif); font-size:1.2rem; font-style:italic; color:var(--text); text-decoration:none; transition:color 0.25s; }
-.contact-direct-link:hover { color:var(--accent); }
+.contact-direct-link:hover { color:var(--rose); }
 .contact-form-wrap { background:var(--bg2); border:1px solid var(--border2); border-radius:calc(var(--radius)*1.5); padding:clamp(28px,4vw,44px); }
 .form-group { display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }
 .form-label { font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); }
 .form-input { background:var(--card); border:1px solid var(--border2); color:var(--text); font-family:var(--sans); font-size:14px; padding:13px 16px; outline:none; transition:border-color 0.3s,box-shadow 0.3s; border-radius:var(--radius); width:100%; appearance:none; }
-.form-input:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(155,107,132,0.08); }
+.form-input:focus { border-color:var(--rose); box-shadow:0 0 0 3px rgba(212,129,154,0.08); }
 .form-input::placeholder { color:var(--muted); opacity:0.4; }
 select.form-input { cursor:pointer; }
 .form-submit { width:100%; margin-top:6px; font-size:12px; padding:15px; }
@@ -401,26 +423,26 @@ select.form-input { cursor:pointer; }
 #socials { background:var(--bg2); border-top:1px solid var(--border2); }
 .socials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
 .social-card { background:var(--card); border:1px solid var(--border2); border-radius:calc(var(--radius)*1.5); padding:clamp(22px,3vw,32px); display:flex; flex-direction:column; gap:8px; text-decoration:none; transition:box-shadow 0.3s,border-color 0.3s,transform 0.3s; }
-.social-card:hover { box-shadow:0 6px 28px rgba(155,107,132,0.10); border-color:var(--border); transform:translateY(-2px); }
-.social-platform { font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent); }
+.social-card:hover { box-shadow:var(--shadow-hover); border-color:var(--border); transform:translateY(-2px); }
+.social-platform { font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--rose); }
 .social-handle { font-family:var(--serif); font-size:1.3rem; font-style:italic; color:var(--text); }
 .social-desc { font-size:13px; color:var(--muted); line-height:1.7; }
-.social-arrow { color:var(--accent); margin-top:auto; font-size:18px; }
+.social-arrow { color:var(--rose); margin-top:auto; font-size:18px; }
 
 /* ── FOOTER ── */
 footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 .footer-inner { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; }
 @media(max-width:768px){ .footer-inner{ grid-template-columns:1fr; } }
-.footer-logo { font-family:var(--serif); font-size:1.5rem; font-style:italic; font-weight:300; color:#F0C4CF; margin-bottom:12px; }
-.footer-logo span { color:var(--accent2); }
-.footer-brand-text { font-size:13px; color:rgba(240,196,207,0.4); line-height:1.7; max-width:280px; }
-.footer-col-title { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent2); margin-bottom:16px; }
+.footer-logo { font-family:var(--serif); font-size:1.5rem; font-style:italic; font-weight:300; color:var(--blush); margin-bottom:12px; }
+.footer-logo span { color:var(--rose); }
+.footer-brand-text { font-size:13px; color:rgba(244,214,223,0.45); line-height:1.7; max-width:280px; }
+.footer-col-title { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--blush); margin-bottom:16px; }
 .footer-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
-.footer-links a { font-size:13px; font-weight:300; color:#F4D6DF !important; text-decoration:none; transition:color 0.25s; }
-.footer-links a:hover { color:var(--accent2) !important; }
+.footer-links a { font-size:13px; font-weight:300; color:var(--blush) !important; text-decoration:none; transition:color 0.25s; }
+.footer-links a:hover { color:var(--blush) !important; }
 .footer-bottom { border-top:0.5px solid rgba(255,255,255,0.06); padding-top:24px; margin-top:40px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-.footer-copy { font-size:11px; color:rgba(240,196,207,0.2); }
-.footer-ornament { font-size:12px; color:rgba(212,129,154,0.2); letter-spacing:0.3em; }
+.footer-copy { font-size:11px; color:rgba(244,214,223,0.25); }
+.footer-ornament { font-size:12px; color:rgba(244,214,223,0.2); letter-spacing:0.3em; }
 
 /* ── ANIMATIONS ── */
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
@@ -444,16 +466,16 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 </head>
 <body>
 <!-- ── NAV ── -->
-<nav id="navbar">
+<nav id="navbar" class="">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">yonni<span>lee</span></a>
+      <a href="https://www.yonnilee.ru/#" class="nav-logo">yonni<span>lee</span></a>
       <ul class="nav-links">
-        <li><a href="#about">о практике</a></li>
-        <li><a href="#cases">истории</a></li>
-        <li><a href="#programs">программы</a></li>
-        <li><a href="#faq">вопросы</a></li>
-        <li><a href="#contact">записаться</a></li>
+        <li><a href="https://www.yonnilee.ru/#about">о практике</a></li>
+        <li><a href="https://www.yonnilee.ru/#cases">истории</a></li>
+        <li><a href="https://www.yonnilee.ru/#programs">программы</a></li>
+        <li><a href="https://www.yonnilee.ru/#faq">вопросы</a></li>
+        <li><a href="https://www.yonnilee.ru/#contact">записаться</a></li>
       </ul>
       <a href="https://t.me/tvoymasterlee" target="_blank" class="btn btn-primary nav-cta" rel="noopener">написать</a>
       <button class="burger" id="burger" onclick="toggleMenu()" aria-label="меню">
@@ -465,11 +487,11 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="toggleMenu()">о практике</a>
-  <a href="#cases" onclick="toggleMenu()">истории</a>
-  <a href="#programs" onclick="toggleMenu()">программы</a>
-  <a href="#faq" onclick="toggleMenu()">вопросы</a>
-  <a href="#contact" onclick="toggleMenu()" style="color:var(--accent)">записаться</a>
+  <a href="https://www.yonnilee.ru/#about" onclick="toggleMenu()">о практике</a>
+  <a href="https://www.yonnilee.ru/#cases" onclick="toggleMenu()">истории</a>
+  <a href="https://www.yonnilee.ru/#programs" onclick="toggleMenu()">программы</a>
+  <a href="https://www.yonnilee.ru/#faq" onclick="toggleMenu()">вопросы</a>
+  <a href="https://www.yonnilee.ru/#contact" onclick="toggleMenu()" style="color:var(--rose)">записаться</a>
 </div>
 
 <!-- ── HERO ── -->
@@ -480,47 +502,61 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
     <p class="hero-sub reveal reveal-delay-2 visible">тантрический йони-хилинг для женщин и пар. практика которая снимает телесные блоки, возвращает либидо и сексуальную чувствительность.</p>
     <div class="hero-actions reveal reveal-delay-3 visible">
       <a href="https://t.me/tvoymasterlee" target="_blank" class="btn btn-primary" rel="noopener">записаться на сеанс</a>
-      <a href="#programs" class="btn btn-outline">программы</a>
+      <a href="https://www.yonnilee.ru/#programs" class="btn btn-outline">программы</a>
     </div>
     <div class="hero-notice reveal reveal-delay-4 visible">
       <strong>важно:</strong> йони массаж — это не эротический и не боди-массаж. это <em>тантрическая терапевтическая практика</em> — для тех, кто ищет глубокого контакта с собой.
     </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-canvas-wrap">
-      <canvas id="heroCanvas"></canvas>
+    <div class="hero-stats reveal visible">
+      <div><div class="stat-num">5+</div><div class="stat-label">лет практики</div></div>
+      <div><div class="stat-num">2+</div><div class="stat-label">года этому проекту</div></div>
+      <div><div class="stat-num">800+</div><div class="stat-label">подписчиков в экосистеме Lee</div></div>
+      <div><div class="stat-num">4</div><div class="stat-label">программы</div></div>
     </div>
   </div>
-  <div class="hero-stats reveal visible">
-    <div><div class="stat-num">5+</div><div class="stat-label">лет практики</div></div>
-    <div><div class="stat-num">2+</div><div class="stat-label">года этому проекту</div></div>
-    <div><div class="stat-num">800+</div><div class="stat-label">подписчиков в экосистеме Lee</div></div>
-    <div><div class="stat-num">4</div><div class="stat-label">программы</div></div>
+  <div class="hero-right">
+    <div class="hero-video-wrap">
+      <video
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster=""
+        style="width:100%;height:100%;object-fit:cover;display:block;"
+      >
+        <!-- Замените src на ссылку на ваше видео, например: -->
+        <!-- <source src="https://your-cdn.com/hero-video.mp4" type="video/mp4"> -->
+        <!-- Пока видео не загружено — показывается градиентный фон -->
+      </video>
+      <!-- Нежный оверлей поверх видео -->
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(253,248,246,0.08) 0%,rgba(42,31,45,0.15) 100%);pointer-events:none;"></div>
+    </div>
   </div>
 </section>
 
 <!-- ── WHY (ПЕРЕПИСАН) ── -->
 <section id="why" class="section">
   <div class="container">
-    <div class="reveal">
+    <div class="reveal visible">
       <div class="section-label">зачем нужен тантрический массаж йони</div>
       <h2>потеряла чувствительность?<br>живёшь в голове и <em>тревоге?</em></h2>
     </div>
     <div class="why-grid">
 
-      <div class="why-card reveal reveal-delay-1">
+      <div class="why-card reveal reveal-delay-1 visible">
         <div class="why-eyebrow">телесные блоки</div>
         <h3 class="why-title">все время в мыслях — поэтому не чувствуешь тела</h3>
         <p class="why-text">контроль, тревога, достигаторство — это не характер. это тело, которое давно не получало настоящего внимания. йони-хилинг убирает телесные зажимы и возвращает тебя обратно — туда, где начинается истинное наслаждение</p>
       </div>
 
-      <div class="why-card reveal reveal-delay-2">
+      <div class="why-card reveal reveal-delay-2 visible">
         <div class="why-eyebrow">либидо и чувствительность</div>
         <h3 class="why-title">нет оргазма — или сексуальность просто угасает</h3>
         <p class="why-text">стресс, антидепрессанты, усталость — чувствительность не уходит навсегда. она просто угасает, практика йони массажа мягко восстанавливает сексуальную энергию и женскую чувственность.</p>
       </div>
 
-      <div class="why-card reveal reveal-delay-3">
+      <div class="why-card reveal reveal-delay-3 visible">
         <div class="why-eyebrow">близость в паре</div>
         <h3 class="why-title">секс стал будничным — пропала искра</h3>
         <p class="why-text">пары приходят с одним запросом: вернуть настоящую близость. тантрический сеанс для пар помогает восстановить телесные импульсы и настоящую сексуальную связь.</p>
@@ -534,11 +570,11 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 <section id="about" class="section">
   <div class="container">
     <div class="about-grid">
-      <div class="about-text reveal">
+      <div class="about-text reveal visible">
         <div class="section-label">кто я · почему мне стоит доверять</div>
         <h2>не просто йони массажист:<br><em>а твой проводник в мире тантры</em></h2>
         <div style="margin-top:28px;">
-          <p>привет, я Ли. практикую тантрический йони массаж уже <strong style="color:var(--accent);font-weight:400;">5 лет</strong>. а данному проекту уже 2 — и все началось после того, как я понял две вещи:</p>
+          <p>привет, я Ли. практикую тантрический йони массаж уже <strong style="color:var(--rose);font-weight:400;">5 лет</strong>. а данному проекту уже 2 — и все началось после того, как я понял две вещи:</p>
           <p>раз: большинство женщин никогда не испытывали по настоящему оргазм. не потому что что-то не могут, а просто потому что не знают что так можно).</p>
           <p>два: большинство мужчин искренне хотят дать своей женщине удовольствие — но просто не знают как. нас этому не учили.</p>
           <p class="about-accent">мои практики — про то, как наработать навык "чувствовать", чтобы дарить удовольствие себе и своему ближнему.</p>
@@ -557,7 +593,7 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
         </div>
       </div>
 
-      <div class="reveal reveal-delay-2">
+      <div class="reveal reveal-delay-2 visible">
         <div class="about-stats">
           <div class="about-stat-card"><div class="about-stat-num">5</div><div class="about-stat-label">лет практики</div></div>
           <div class="about-stat-card"><div class="about-stat-num">21+</div><div class="about-stat-label">возраст участниц</div></div>
@@ -586,31 +622,31 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 <!-- ── CASES ── -->
 <section id="cases" class="section">
   <div class="container">
-    <div class="cases-intro reveal">
+    <div class="cases-intro reveal visible">
       <div class="section-label">истории до и после</div>
       <h2>с какими запросами<br><em> приходят</em> на массаж йоне</h2>
       <p style="margin-top:16px;">потеряла либидо, не можешь расслабиться, пропала искра в паре — возможно, одна из этих историй про вас.</p>
     </div>
     <div class="cases-grid">
-      <div class="case-card reveal reveal-delay-1">
+      <div class="case-card reveal reveal-delay-1 visible">
         <h3 class="case-name">Дарина — не могу расслабиться рядом с мужчиной</h3>
         <div class="case-problem">запрос: убрать телесные блоки и страх доверия</div>
         <p class="case-text">«с самого детства с отцом у нас натянутые отношения, не было не то что банального внимания, заботы и любви, но и чувства безопасности. из-за этого не могу полностью довериться и расслабиться рядом с мужчинами»</p>
         <div class="case-result">→ телесные блоки · страх близости · недоверие к мужчинам</div>
       </div>
-      <div class="case-card reveal reveal-delay-2">
+      <div class="case-card reveal reveal-delay-2 visible">
         <h3 class="case-name">Сергей — в паре пропала сексуальная близость</h3>
         <div class="case-problem">запрос: вернуть искру и помочь жене с оргазмом</div>
         <p class="case-text">«проблемы в отношениях с женой — конкретно трудности с достижением оргазма, плюс её стеснительность, которая не даёт проявиться эмоциям. наши отношения потеряли искру»</p>
         <div class="case-result">→ нет оргазма у партнёрши · пара потеряла близость</div>
       </div>
-      <div class="case-card reveal reveal-delay-3">
+      <div class="case-card reveal reveal-delay-3 visible">
         <h3 class="case-name">Анна — потеряла чувствительность после антидепрессантов</h3>
         <div class="case-problem">запрос: вернуть либидо и чувствительность тела</div>
         <p class="case-text">«год сидела на антидепрессантах. как прекратила приём — не чувствую своё тело, либидо нет от слова совсем. на просьбы попробовать что-то нежное мой партнёр не отвечает»</p>
         <div class="case-result">→ потеря либидо · нет чувствительности тела · после АД</div>
       </div>
-      <div class="case-card reveal reveal-delay-4">
+      <div class="case-card reveal reveal-delay-4 visible">
         <h3 class="case-name">Светлана — выгорание, хочу почувствовать себя женщиной</h3>
         <div class="case-problem">запрос: перезагрузка и возвращение к женской чувственности</div>
         <p class="case-text">«у меня перегрузка на работе и я чувствую какой-то упадок сил. подруга настоятельно рекомендовала такой массаж, я долго думала и решила попробовать»</p>
@@ -623,22 +659,22 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 <!-- ── FOR WHOM ── -->
 <section id="forwhom" class="section">
   <div class="container">
-    <div class="reveal" style="text-align:center;max-width:540px;margin:0 auto 48px;">
+    <div class="reveal visible" style="text-align:center;max-width:540px;margin:0 auto 48px;">
       <div class="section-label">кому подходит тантрический йони массаж</div>
       <h2>для девушек, <em>пар</em><br>и мужчин — обучение</h2>
     </div>
     <div class="forwhom-grid">
-      <div class="forwhom-card reveal reveal-delay-1">
+      <div class="forwhom-card reveal reveal-delay-1 visible">
         <div class="forwhom-icon">♀</div>
         <h3 class="forwhom-title">Девушкам: вернуть чувствительность и либидо</h3>
         <p class="forwhom-text">хочешь убрать телесные блоки, снять сексуальные зажимы или просто познать своё тело заново — йони-хилинг для этого и создан.</p>
       </div>
-      <div class="forwhom-card reveal reveal-delay-2">
+      <div class="forwhom-card reveal reveal-delay-2 visible">
         <div class="forwhom-icon">∞</div>
         <h3 class="forwhom-title">Парам: йони массаж для восстановления близости</h3>
         <p class="forwhom-text">пропала искра, секс стал дежурным, партнёрша потеряла чувствительность — сеанс для пар помогает восстановить телесное доверие и сексуальную связь.</p>
       </div>
-      <div class="forwhom-card reveal reveal-delay-3">
+      <div class="forwhom-card reveal reveal-delay-3 visible">
         <div class="forwhom-icon">✦</div>
         <h3 class="forwhom-title">Мужчинам: обучение технике йони массажа</h3>
         <p class="forwhom-text">хочешь научиться делать йони массаж партнёрше — программа daoLee. видеоуроки и мастер-классы по тантрическому массажу. онлайн и в Москве.</p>
@@ -650,14 +686,14 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 <!-- ── PROGRAMS ── -->
 <section id="programs" class="section">
   <div class="container">
-    <div class="programs-header reveal">
+    <div class="programs-header reveal visible">
       <div class="section-label">сеансы йони массажа и обучение в Москве</div>
       <h2>записаться на йони массаж<br>или <em>обучение</em> — ты можешь выбрав свой удобный формат:</h2>
       <p style="margin-top:14px;">личный сеанс в Москве, онлайн-обучение для девушек, программа для пар и курс для мужчин.</p>
     </div>
     <div class="programs-grid">
 
-      <div class="program-card reveal reveal-delay-1">
+      <div class="program-card reveal reveal-delay-1 visible">
         <div class="program-tag">обучение · онлайн</div>
         <h3 class="program-name">«kundaLeeny» — как делать йони массаж себе: онлайн-обучение</h3>
         <p class="program-desc">курс для девушек. как самостоятельно делать йони массаж, убирать телесные блоки и возвращать чувствительность — шаг за шагом, в своём ритме.</p>
@@ -672,9 +708,9 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
         <a href="https://t.me/+Dh_7FHOd_XM1M2My" target="_blank" class="program-link" rel="noopener">узнать подробнее</a>
       </div>
 
-      <div class="program-card featured reveal reveal-delay-2">
+      <div class="program-card featured reveal reveal-delay-2 visible">
         <div class="program-badge">популярное</div>
-        <div class="program-tag" style="background:rgba(212,129,154,0.15);color:#F0C4CF;">личный сеанс</div>
+        <div class="program-tag" style="background:rgba(212,129,154,0.15);color:var(--blush);">личный сеанс</div>
         <h3 class="program-name">«cleoLee» — личный сеанс йони массажа в Москве</h3>
         <p class="program-desc">тантрический йони массаж для девушек и женщин. снимает сексуальные блоки, восстанавливает либидо и чувствительность. в Москве, индивидуально.</p>
         <ul class="program-list">
@@ -689,7 +725,7 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
         <a href="https://t.me/m/AmG7QzUHODUy" target="_blank" class="program-link program-link-white" rel="noopener">записаться</a>
       </div>
 
-      <div class="program-card reveal reveal-delay-3">
+      <div class="program-card reveal reveal-delay-3 visible">
         <div class="program-tag">для пар</div>
         <h3 class="program-name">«yoniLee» — тантрический массаж для пар в Москве</h3>
         <p class="program-desc">вернуть близость в паре, восстановить сексуальную связь. сеанс для двоих — с дыханием, массажем и техниками которые можно использовать дома.</p>
@@ -704,7 +740,7 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
         <a href="https://t.me/m/gI7bI515MWZi" target="_blank" class="program-link" rel="noopener">узнать подробнее</a>
       </div>
 
-      <div class="program-card program-wide reveal">
+      <div class="program-card program-wide reveal visible">
         <div>
           <div class="program-tag">для мужчин · обучение</div>
           <h3 class="program-name" style="margin-top:10px;">«daoLee» — как делать йони массаж партнёрше: курс для мужчин</h3>
@@ -726,7 +762,7 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
   <div class="container">
     <div class="cert-inner">
 
-      <div class="reveal">
+      <div class="reveal visible">
         <div class="section-label cert-label">подарочный сертификат · для подруги · для партнёрши</div>
         <h2 class="cert-title">подари ей,<br>незабываемые<br><em>ощущения</em></h2>
         <div class="cert-text">
@@ -735,7 +771,7 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
         </div>
       </div>
 
-      <div class="cert-card reveal reveal-delay-2">
+      <div class="cert-card reveal reveal-delay-2 visible">
         <div class="cert-card-label">подарочный сертификат</div>
         <div class="cert-formats">
           <div class="cert-format">
@@ -765,7 +801,7 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 <section id="ritual" class="section">
   <div class="container">
     <div class="ritual-content">
-      <div class="reveal">
+      <div class="reveal visible">
         <div class="section-label ritual-label">как это устроено</div>
         <h2 class="ritual-title">каждый сеанс —<br>это целый <em>ритуал</em></h2>
         <p class="ritual-sub" style="margin-top:16px;">не просто массаж. практика, где можно найти себя, свою женственность и притягательность.</p>
@@ -800,23 +836,23 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
           </div>
         </div>
       </div>
-      <div class="ritual-visual reveal reveal-delay-2">
+      <div class="ritual-visual reveal reveal-delay-2 visible">
         <canvas id="ritualCanvas" width="480" height="420"></canvas>
         <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;">
           <svg width="90" height="90" viewBox="0 0 44 44" fill="none" aria-hidden="true">
             <g opacity="0.95">
-              <ellipse cx="22" cy="16" rx="4.5" ry="8" fill="rgba(158,127,166,0.3)" stroke="#9E7FA6" stroke-width="0.8"/>
-              <ellipse cx="22" cy="28" rx="4.5" ry="8" fill="rgba(158,127,166,0.3)" stroke="#9E7FA6" stroke-width="0.8"/>
-              <ellipse cx="16" cy="22" rx="8" ry="4.5" fill="rgba(158,127,166,0.3)" stroke="#9E7FA6" stroke-width="0.8"/>
-              <ellipse cx="28" cy="22" rx="8" ry="4.5" fill="rgba(158,127,166,0.3)" stroke="#9E7FA6" stroke-width="0.8"/>
-              <ellipse cx="17" cy="17" rx="4.5" ry="8" transform="rotate(45 17 17)" fill="rgba(212,129,154,0.22)" stroke="#D4819A" stroke-width="0.7"/>
-              <ellipse cx="27" cy="27" rx="4.5" ry="8" transform="rotate(45 27 27)" fill="rgba(212,129,154,0.22)" stroke="#D4819A" stroke-width="0.7"/>
-              <ellipse cx="27" cy="17" rx="4.5" ry="8" transform="rotate(-45 27 17)" fill="rgba(212,129,154,0.22)" stroke="#D4819A" stroke-width="0.7"/>
-              <ellipse cx="17" cy="27" rx="4.5" ry="8" transform="rotate(-45 17 27)" fill="rgba(212,129,154,0.22)" stroke="#D4819A" stroke-width="0.7"/>
+              <ellipse cx="22" cy="16" rx="4.5" ry="8" fill="rgba(158,127,166,0.3)" stroke="#9E7FA6" stroke-width="0.8"></ellipse>
+              <ellipse cx="22" cy="28" rx="4.5" ry="8" fill="rgba(158,127,166,0.3)" stroke="#9E7FA6" stroke-width="0.8"></ellipse>
+              <ellipse cx="16" cy="22" rx="8" ry="4.5" fill="rgba(158,127,166,0.3)" stroke="#9E7FA6" stroke-width="0.8"></ellipse>
+              <ellipse cx="28" cy="22" rx="8" ry="4.5" fill="rgba(158,127,166,0.3)" stroke="#9E7FA6" stroke-width="0.8"></ellipse>
+              <ellipse cx="17" cy="17" rx="4.5" ry="8" transform="rotate(45 17 17)" fill="rgba(212,129,154,0.22)" stroke="#D4819A" stroke-width="0.7"></ellipse>
+              <ellipse cx="27" cy="27" rx="4.5" ry="8" transform="rotate(45 27 27)" fill="rgba(212,129,154,0.22)" stroke="#D4819A" stroke-width="0.7"></ellipse>
+              <ellipse cx="27" cy="17" rx="4.5" ry="8" transform="rotate(-45 27 17)" fill="rgba(212,129,154,0.22)" stroke="#D4819A" stroke-width="0.7"></ellipse>
+              <ellipse cx="17" cy="27" rx="4.5" ry="8" transform="rotate(-45 17 27)" fill="rgba(212,129,154,0.22)" stroke="#D4819A" stroke-width="0.7"></ellipse>
             </g>
-            <circle cx="22" cy="22" r="5" fill="rgba(201,169,110,0.9)" stroke="#C9A96E" stroke-width="0.6"/>
-            <circle cx="22" cy="22" r="2" fill="#1a1020"/>
-            <circle cx="22" cy="22" r="0.8" fill="#C9A96E"/>
+            <circle cx="22" cy="22" r="5" fill="rgba(201,169,110,0.9)" stroke="#C9A96E" stroke-width="0.6"></circle>
+            <circle cx="22" cy="22" r="2" fill="#1a1020"></circle>
+            <circle cx="22" cy="22" r="0.8" fill="#C9A96E"></circle>
           </svg>
         </div>
       </div>
@@ -827,7 +863,7 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 <!-- ── REVIEWS ── -->
 <section id="reviews" class="section">
   <div class="container">
-    <div class="reveal" style="text-align:center;max-width:500px;margin:0 auto 48px;">
+    <div class="reveal visible" style="text-align:center;max-width:500px;margin:0 auto 48px;">
       <div class="section-label">отзывы о йони массаже мастера Ли в Москве</div>
       <h2>что говорят после сеанса<br>тантрического <em>йони массажа</em></h2>
     </div>
@@ -923,12 +959,12 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 <!-- ── FAQ ── -->
 <section id="faq" class="section">
   <div class="container">
-    <div class="reveal" style="max-width:500px;margin-bottom:52px;">
+    <div class="reveal visible" style="max-width:500px;margin-bottom:52px;">
       <div class="section-label">вопросы о йони массаже — как проходит сеанс</div>
       <h2>всё о тантрическом<br><em>массаже йоне </em> </h2>
     </div>
     <div class="faq-grid">
-      <div class="faq-list reveal">
+      <div class="faq-list reveal visible">
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
             <span class="faq-q-text">йони массаж — это то же самое, что эротический массаж?</span>
@@ -973,7 +1009,7 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
         </div>
       </div>
 
-      <div class="faq-list reveal reveal-delay-2">
+      <div class="faq-list reveal reveal-delay-2 visible">
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
             <span class="faq-q-text">Можно ли делать йони массаж при болях в интимной зоне?</span>
@@ -1019,7 +1055,7 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
       </div>
     </div>
 
-    <div class="faq-process reveal" style="margin-top:48px;">
+    <div class="faq-process reveal visible" style="margin-top:48px;">
       <div class="faq-process-title">частые вопросы о том, «как проходит сеанс?»</div>
       <ul class="faq-process-list">
         <li>
@@ -1052,7 +1088,7 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 <section id="contact" class="section">
   <div class="container">
     <div class="contact-inner">
-      <div class="reveal">
+      <div class="reveal visible">
         <div class="section-label">внутри все откликается?</div>
         <h2>записаться на <br>массаж йони  <br>— в Москве <em>или в своем городе</em></h2>
         <p style="margin-top:16px;">просто напиши мне —  «привет, хочу записаться».</p>
@@ -1069,13 +1105,13 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
         <a href="https://t.me/tvoymasterlee" target="_blank" class="btn btn-outline" style="margin-top:14px;display:inline-block;" rel="noopener">@tvoymasterlee</a>
       </div>
 
-      <div class="contact-form-wrap reveal reveal-delay-2">
+      <div class="contact-form-wrap reveal reveal-delay-2 visible">
         <div class="section-label" style="margin-bottom:20px;">анкета</div>
         <p style="font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.7;">позволит сэкономить время и раскрыть запрос точнее.</p>
         <form id="contactForm">
           <div class="form-group">
             <label class="form-label">имя и возраст</label>
-            <input type="text" class="form-input" placeholder="Анна, 27 лет" required>
+            <input type="text" class="form-input" placeholder="Анна, 27 лет" required="">
           </div>
           <div class="form-group">
             <label class="form-label">есть ли в вашей жизни место антидепрессантам?</label>
@@ -1109,11 +1145,11 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
           </div>
           <div class="form-group">
             <label class="form-label">ваш никнейм в телеграм (с @)</label>
-            <input type="text" class="form-input" placeholder="@username" required>
+            <input type="text" class="form-input" placeholder="@username" required="">
           </div>
           <button type="submit" class="btn btn-primary form-submit">отправить анкету →</button>
         </form>
-        <p class="form-note">нажимая кнопку, вы даёте согласие на обработку данных согласно <a href="https://yonnilee.ru/privacy" style="color:var(--accent);text-decoration:none;">политике конфиденциальности</a></p>
+        <p class="form-note">нажимая кнопку, вы даёте согласие на обработку данных согласно <a href="https://yonnilee.ru/privacy" style="color:var(--rose);text-decoration:none;">политике конфиденциальности</a></p>
       </div>
     </div>
   </div>
@@ -1122,24 +1158,24 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
 <!-- ── SOCIALS ── -->
 <section id="socials" class="section">
   <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:40px;">
+    <div class="reveal visible" style="text-align:center;margin-bottom:40px;">
       <div class="section-label">yonnilee · канал о тантре и моих практиках</div>
       <h2>телеграм-канал о йони массаже<br>и <em>женской энергии</em></h2>
     </div>
     <div class="socials-grid">
-      <a href="https://t.me/yonnilee" target="_blank" class="social-card reveal reveal-delay-1" rel="noopener">
+      <a href="https://t.me/yonnilee" target="_blank" class="social-card reveal reveal-delay-1 visible" rel="noopener">
         <div class="social-platform">Telegram · канал</div>
         <div class="social-handle">@yonnilee</div>
         <p class="social-desc">всё о йони массаже, тантре и женской чувственности. отзывы, практики, истории трансформаций.</p>
         <div class="social-arrow">→</div>
       </a>
-      <a href="https://t.me/tvoymasterlee" target="_blank" class="social-card reveal reveal-delay-2" rel="noopener">
+      <a href="https://t.me/tvoymasterlee" target="_blank" class="social-card reveal reveal-delay-2 visible" rel="noopener">
         <div class="social-platform">Telegram · личные сообщения</div>
         <div class="social-handle">@tvoymasterlee</div>
         <p class="social-desc">написать мастеру Ли лично — для записи, вопросов и разговора.</p>
         <div class="social-arrow">→</div>
       </a>
-      <a href="https://yonnilee.ru/obuchenie" target="_blank" class="social-card reveal reveal-delay-3" rel="noopener">
+      <a href="https://yonnilee.ru/obuchenie" target="_blank" class="social-card reveal reveal-delay-3 visible" rel="noopener">
         <div class="social-platform">обучение</div>
         <div class="social-handle">daoLee</div>
         <p class="social-desc">курс для мужчин. видеоуроки, мастер-классы. Москва, Спб, онлайн.</p>
@@ -1160,9 +1196,9 @@ footer { background:var(--text); padding:clamp(40px,5vw,60px) 0; }
       <div>
         <div class="footer-col-title">программы</div>
         <ul class="footer-links">
-          <li><a href="#programs">kundaLeeny — самомассаж йони для девушек</a></li>
-          <li><a href="#programs">cleoLee — сеанс йони массажа в Москве</a></li>
-          <li><a href="#programs">yoniLee — йони массаж для пар</a></li>
+          <li><a href="https://www.yonnilee.ru/#programs">kundaLeeny — самомассаж йони для девушек</a></li>
+          <li><a href="https://www.yonnilee.ru/#programs">cleoLee — сеанс йони массажа в Москве</a></li>
+          <li><a href="https://www.yonnilee.ru/#programs">yoniLee — йони массаж для пар</a></li>
           <li><a href="https://yonnilee.ru/obuchenie">daoLee — обучение йони массажу для мужчин</a></li>
         </ul>
       </div>
@@ -1189,300 +1225,6 @@ const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
-
-/* HERO CANVAS — light feminine generative art */
-(function() {
-  const canvas = document.getElementById('heroCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  function resize() {
-    const p = canvas.parentElement;
-    canvas.width  = p.offsetWidth  || 600;
-    canvas.height = p.offsetHeight || 700;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  const W = () => canvas.width;
-  const H = () => canvas.height;
-
-  /* ── PALETTE ── soft feminine */
-  const P = {
-    bg0:    [247, 239, 244],   /* blush white    */
-    bg1:    [240, 225, 235],   /* rose mist      */
-    petal0: [232, 176, 196],   /* dusty rose     */
-    petal1: [212, 160, 130],   /* warm terracotta*/
-    petal2: [195, 155, 185],   /* lilac          */
-    gold:   [201, 169, 110],   /* warm gold      */
-    cream:  [250, 240, 228],   /* cream          */
-    silk:   [220, 195, 210],   /* silk pink      */
-  };
-  const rgba = ([r,g,b], a) => `rgba(${r},${g},${b},${a})`;
-
-  /* ── HELPERS ── */
-  function petal(cx, cy, rx, ry, angle, fill, stroke, sAlpha) {
-    ctx.save();
-    ctx.translate(cx, cy);
-    ctx.rotate(angle);
-    ctx.beginPath();
-    ctx.moveTo(0, -ry);
-    ctx.bezierCurveTo( rx * 0.85, -ry * 0.55,  rx * 0.85,  ry * 0.55,  0,  ry);
-    ctx.bezierCurveTo(-rx * 0.85,  ry * 0.55, -rx * 0.85, -ry * 0.55,  0, -ry);
-    ctx.closePath();
-    ctx.fillStyle = fill;
-    ctx.fill();
-    if (stroke && sAlpha > 0) {
-      ctx.strokeStyle = stroke.replace('A', sAlpha.toFixed(2));
-      ctx.lineWidth = 0.6;
-      ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  /* ── LOTUS / ROSE BLOOM ── */
-  function bloom(cx, cy, r, t) {
-    const pulse = 1 + 0.025 * Math.sin(t * 0.7);
-
-    /* soft aura layers */
-    [1.9, 1.55, 1.2, 0.85].forEach((scale, i) => {
-      const gr = ctx.createRadialGradient(cx, cy, 0, cx, cy, r * scale * pulse);
-      gr.addColorStop(0,   rgba(P.petal0, 0.06 * (4 - i)));
-      gr.addColorStop(0.6, rgba(P.petal2, 0.03 * (4 - i)));
-      gr.addColorStop(1,   rgba(P.bg0,    0));
-      ctx.fillStyle = gr;
-      ctx.beginPath();
-      ctx.arc(cx, cy, r * scale * pulse, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    /* outer ring petals — 12, very translucent */
-    for (let i = 0; i < 12; i++) {
-      const ang  = (i / 12) * Math.PI * 2 + t * 0.012;
-      const dist = r * 1.22 * pulse;
-      const pr   = r * 0.34;
-      const col  = i % 3 === 0 ? P.petal0 : i % 3 === 1 ? P.petal2 : P.silk;
-      const a    = 0.18 + 0.06 * Math.sin(t * 0.4 + i);
-      const px   = cx + Math.cos(ang) * dist;
-      const py   = cy + Math.sin(ang) * dist;
-      const fill = ctx.createLinearGradient(
-        px - Math.cos(ang) * pr * 0.5, py - Math.sin(ang) * pr * 0.5,
-        px + Math.cos(ang) * pr * 0.5, py + Math.sin(ang) * pr * 0.5
-      );
-      fill.addColorStop(0, rgba(P.cream, a * 0.6));
-      fill.addColorStop(1, rgba(col,     a));
-      petal(px, py, pr * 0.32, pr * 0.7, ang + Math.PI / 2, fill, null, 0);
-    }
-
-    /* mid ring petals — 8 */
-    for (let i = 0; i < 8; i++) {
-      const ang  = (i / 8) * Math.PI * 2 + t * 0.018 + 0.2;
-      const dist = r * 0.75 * pulse;
-      const pr   = r * 0.28;
-      const col  = i % 2 === 0 ? P.petal0 : P.petal1;
-      const a    = 0.28 + 0.08 * Math.sin(t * 0.5 + i * 0.7);
-      const px   = cx + Math.cos(ang) * dist;
-      const py   = cy + Math.sin(ang) * dist;
-      const fill = ctx.createRadialGradient(px, py, 0, px, py, pr * 0.9);
-      fill.addColorStop(0, rgba(P.cream, a * 0.8));
-      fill.addColorStop(1, rgba(col,     a * 1.1));
-      petal(px, py, pr * 0.35, pr * 0.75, ang + Math.PI / 2, fill,
-            `rgba(${col.join(',')},A)`, a * 0.25);
-    }
-
-    /* inner rose petals — 5 */
-    for (let i = 0; i < 5; i++) {
-      const ang  = (i / 5) * Math.PI * 2 + t * 0.025 + t * 0.01;
-      const dist = r * 0.32 * pulse;
-      const pr   = r * 0.26;
-      const a    = 0.55 + 0.1 * Math.sin(t * 0.6 + i);
-      const px   = cx + Math.cos(ang) * dist;
-      const py   = cy + Math.sin(ang) * dist;
-      const fill = ctx.createRadialGradient(px, py, 0, px, py, pr);
-      fill.addColorStop(0, rgba(P.cream,  a * 0.9));
-      fill.addColorStop(0.5, rgba(P.petal0, a));
-      fill.addColorStop(1,   rgba(P.petal2, a * 0.7));
-      petal(px, py, pr * 0.4, pr * 0.8, ang + Math.PI / 2, fill,
-            `rgba(${P.petal0.join(',')},A)`, a * 0.2);
-    }
-
-    /* centre bud */
-    const budR  = r * 0.13 * pulse;
-    const budGr = ctx.createRadialGradient(cx, cy, 0, cx, cy, budR * 1.4);
-    budGr.addColorStop(0,   rgba(P.cream,  0.98));
-    budGr.addColorStop(0.5, rgba(P.petal0, 0.85));
-    budGr.addColorStop(1,   rgba(P.petal2, 0.6));
-    ctx.beginPath();
-    ctx.arc(cx, cy, budR * 1.4, 0, Math.PI * 2);
-    ctx.fillStyle = budGr;
-    ctx.fill();
-
-    /* gold stamens */
-    for (let i = 0; i < 7; i++) {
-      const ang = (i / 7) * Math.PI * 2 + t * 0.08;
-      const sr  = budR * 0.6;
-      const sx  = cx + Math.cos(ang) * sr;
-      const sy  = cy + Math.sin(ang) * sr;
-      ctx.beginPath();
-      ctx.arc(sx, sy, 1.6, 0, Math.PI * 2);
-      ctx.fillStyle = rgba(P.gold, 0.75 + 0.2 * Math.sin(t + i));
-      ctx.fill();
-    }
-
-    /* centre dot — bindu */
-    ctx.beginPath();
-    ctx.arc(cx, cy, budR * 0.28, 0, Math.PI * 2);
-    ctx.fillStyle = rgba(P.gold, 0.95);
-    ctx.fill();
-  }
-
-  /* ── SILK THREADS ── */
-  const threads = Array.from({ length: 22 }, (_, i) => ({
-    x: Math.random(),
-    y: Math.random(),
-    vx: (Math.random() - 0.5) * 0.0005,
-    vy: (Math.random() - 0.5) * 0.0005,
-    len: 55 + Math.random() * 90,
-    thick: 0.3 + Math.random() * 0.7,
-    phase: Math.random() * Math.PI * 2,
-    speed: 0.003 + Math.random() * 0.007,
-    col: [P.petal0, P.petal2, P.silk, P.gold][i % 4],
-  }));
-
-  /* ── FLOATING PETALS ── */
-  const floaters = Array.from({ length: 16 }, () => ({
-    x: Math.random() * 1.2 - 0.1,
-    y: Math.random() * 1.2 - 0.1,
-    size: 4 + Math.random() * 12,
-    angle: Math.random() * Math.PI * 2,
-    vx: -0.00015 - Math.random() * 0.0002,
-    vy:  0.00008 + Math.random() * 0.00015,
-    va: (Math.random() - 0.5) * 0.005,
-    col: [P.petal0, P.petal2, P.petal1][Math.floor(Math.random() * 3)],
-    alpha: 0.08 + Math.random() * 0.18,
-  }));
-
-  /* ── DUST MOTES ── */
-  const motes = Array.from({ length: 40 }, () => ({
-    x: Math.random(),
-    y: Math.random(),
-    r: 0.5 + Math.random() * 1.8,
-    phase: Math.random() * Math.PI * 2,
-    speed: 0.003 + Math.random() * 0.006,
-    col: [P.petal0, P.gold, P.cream][Math.floor(Math.random() * 3)],
-  }));
-
-  let t = 0;
-
-  function draw() {
-    const w = W(), h = H();
-    ctx.clearRect(0, 0, w, h);
-
-    /* ── BACKGROUND ── warm gradient */
-    const bg = ctx.createLinearGradient(0, 0, w * 0.4, h);
-    bg.addColorStop(0,   rgba(P.cream, 1));
-    bg.addColorStop(0.4, rgba(P.bg0,   1));
-    bg.addColorStop(1,   rgba(P.bg1,   1));
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, w, h);
-
-    /* subtle texture overlay */
-    for (let i = 0; i < 5; i++) {
-      const gr = ctx.createRadialGradient(
-        w * (0.15 + i * 0.18), h * (0.2 + i * 0.15),
-        0,
-        w * (0.15 + i * 0.18), h * (0.2 + i * 0.15),
-        w * 0.28
-      );
-      gr.addColorStop(0, rgba(P.petal2, 0.04));
-      gr.addColorStop(1, rgba(P.bg0, 0));
-      ctx.fillStyle = gr;
-      ctx.fillRect(0, 0, w, h);
-    }
-
-    /* ── SILK THREADS ── */
-    threads.forEach(th => {
-      th.x += th.vx; th.y += th.vy;
-      if (th.x < -0.1 || th.x > 1.1) th.vx *= -1;
-      if (th.y < -0.1 || th.y > 1.1) th.vy *= -1;
-      const tx = th.x * w, ty = th.y * h;
-      const ang = th.phase + t * th.speed;
-      const ex  = tx + Math.cos(ang) * th.len;
-      const ey  = ty + Math.sin(ang) * th.len;
-      const cpx = tx + (ex - tx) * 0.5 + Math.sin(ang * 1.5 + t) * 18;
-      const cpy = ty + (ey - ty) * 0.5 + Math.cos(ang * 1.5 + t) * 18;
-      ctx.beginPath();
-      ctx.moveTo(tx, ty);
-      ctx.quadraticCurveTo(cpx, cpy, ex, ey);
-      const a = 0.05 + 0.04 * Math.sin(t * th.speed * 10 + th.phase);
-      ctx.strokeStyle = rgba(th.col, a);
-      ctx.lineWidth = th.thick;
-      ctx.stroke();
-    });
-
-    /* ── CONCENTRIC RINGS behind bloom ── */
-    const cx2 = w * 0.5, cy2 = h * 0.44;
-    const mainR = Math.min(w, h) * 0.265;
-    [1.9, 1.6, 1.35, 1.12].forEach((sc, i) => {
-      ctx.beginPath();
-      ctx.arc(cx2, cy2, mainR * sc * (1 + 0.012 * Math.sin(t * 0.5 + i)), 0, Math.PI * 2);
-      ctx.strokeStyle = rgba(P.petal0, 0.06 - i * 0.012);
-      ctx.lineWidth = 0.5;
-      ctx.stroke();
-    });
-
-    /* ── MAIN BLOOM ── */
-    bloom(cx2, cy2, mainR, t);
-
-    /* ── FLOATING PETALS ── */
-    floaters.forEach(fp => {
-      fp.x += fp.vx; fp.y += fp.vy; fp.angle += fp.va;
-      if (fp.x < -0.15) fp.x = 1.1;
-      if (fp.y >  1.15) { fp.y = -0.1; fp.x = Math.random(); }
-      const fx = fp.x * w, fy = fp.y * h;
-      ctx.save();
-      ctx.translate(fx, fy);
-      ctx.rotate(fp.angle);
-      ctx.beginPath();
-      ctx.moveTo(0, -fp.size);
-      ctx.bezierCurveTo( fp.size * 0.6, -fp.size * 0.4,  fp.size * 0.6,  fp.size * 0.4,  0,  fp.size);
-      ctx.bezierCurveTo(-fp.size * 0.6,  fp.size * 0.4, -fp.size * 0.6, -fp.size * 0.4,  0, -fp.size);
-      ctx.closePath();
-      ctx.fillStyle = rgba(fp.col, fp.alpha);
-      ctx.fill();
-      ctx.restore();
-    });
-
-    /* ── DUST MOTES ── */
-    motes.forEach(m => {
-      const a = 0.08 + 0.10 * Math.sin(t * m.speed * 30 + m.phase);
-      ctx.beginPath();
-      ctx.arc(m.x * w, m.y * h, m.r, 0, Math.PI * 2);
-      ctx.fillStyle = rgba(m.col, a);
-      ctx.fill();
-    });
-
-    /* ── LIGHT LEAK top-left ── */
-    const leak = ctx.createRadialGradient(w * 0.05, h * 0.02, 0, w * 0.05, h * 0.02, w * 0.55);
-    leak.addColorStop(0,   rgba(P.cream, 0.55));
-    leak.addColorStop(0.4, rgba(P.cream, 0.12));
-    leak.addColorStop(1,   rgba(P.cream, 0));
-    ctx.fillStyle = leak;
-    ctx.fillRect(0, 0, w, h);
-
-    /* ── SOFT VIGNETTE ── */
-    const vig = ctx.createRadialGradient(w/2, h/2, h * 0.28, w/2, h/2, h * 0.75);
-    vig.addColorStop(0, 'rgba(0,0,0,0)');
-    vig.addColorStop(1, rgba(P.bg1, 0.22));
-    ctx.fillStyle = vig;
-    ctx.fillRect(0, 0, w, h);
-
-    t += 0.016;
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-})();
 
 /* MOBILE MENU */
 function toggleMenu() {
@@ -1670,5 +1412,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 })();
 </script>
 
-</body>
-</html>
+
+
+<veepn-lock-screen><template shadowrootmode="open"><style>html{box-sizing:border-box;text-size-adjust:100%;word-break:normal;tab-size:4}*,:before,:after{background-repeat:no-repeat;box-sizing:border-box}:before,:after{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}hr{overflow:visible;height:0;color:inherit;border:0;border-top:1px solid}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none!important}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}a{background-color:transparent}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit;color:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit],[role=button]{cursor:pointer}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button,html [type=button],[type=reset],[type=submit]{appearance:auto}button,input,select,textarea{background-color:transparent;border-style:none}button:-moz-focusring,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{outline:1px dotted ButtonText}select{appearance:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select::-ms-expand{display:none}select::-ms-value{color:currentcolor}legend{border:0;color:inherit;display:table;white-space:normal;max-width:100%}::-webkit-file-upload-button{appearance:auto;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}ul,ol{list-style-type:none}figure{margin:0}@keyframes slide-in{0%{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.gradient-blue{background:radial-gradient(106.41% 128.47% at 50.15% 128.47%,#23abff,#3066ff)}.gradient-green{background:radial-gradient(92.26% 118.88% at 50.15% .13%,#00c3c3,#00aab3)}.gradient-purple{background:radial-gradient(165.12% 115.56% at 50.15% .13%,#a15aff,#00a0eb)}.bg-blue{background-color:#f2f5ff}.bg-purple{background-color:#f7f0ff}.bg-green{background-color:#ebffed}.lock-screen{font-family:FigtreeVF,sans-serif;letter-spacing:normal;position:fixed;z-index:2147483638;right:24px;bottom:24px;width:327px;border-radius:24px;overflow:hidden;box-shadow:0 24px 32px #00000014;animation:slide-in .3s ease-in-out forwards}.lock-screen__content{position:relative;padding:24px 24px 64px}.lock-screen__close{position:absolute;top:16px;right:16px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.5}.lock-screen__label{height:26px;width:fit-content;border-radius:50px;background-color:#fff3;padding-inline:16px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-size:12px;line-height:18px;margin:-8px auto 16px}.lock-screen__title{color:#fff;text-align:center;font-size:20px;line-height:28px;font-weight:600;margin-bottom:8px}.lock-screen__description{color:#f5f6f7;text-align:center;font-size:14px;line-height:20px}.lock-screen__description b{font-weight:600}.lock-screen__card{position:relative;z-index:1;margin-top:-44px;background-color:#fff;border-radius:24px;padding:32px 20px 20px}.lock-screen__inner{margin-bottom:24px}.lock-screen__submit{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:16px;height:40px;width:100%;border-radius:12px;padding-inline:16px;background-color:#f70;color:#fff;margin-bottom:16px}.lock-screen__skip{display:flex;align-items:center;justify-content:center;font-size:14px;line-height:20px;color:#82829c;margin-inline:auto}.price-card{border:1px solid #f2f2fc;background:linear-gradient(254.14deg,#fafbff .04%,#f5f8ff 100.04%);border-radius:24px;padding:24px 28px}.price-card__label{color:#4a5764;text-align:center;font-size:14px;line-height:20px;text-transform:uppercase;margin-bottom:16px}.price-card__price{display:flex;justify-content:center;align-items:flex-start;column-gap:2px;margin-bottom:12px}.price-card__currency{color:#515478;font-size:18px;line-height:28px}.price-card__number{color:#14142a;text-align:center;font-size:64px;line-height:54px}.price-card__wrap{display:flex;flex-direction:column}.price-card__decimal{color:#515478;font-size:18px;line-height:28px;font-weight:600}.price-card__period{color:#515478;font-size:14px;line-height:20px;margin-top:-6px}.price-card__discount{position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:12px}.price-card__discount-divider{position:absolute;z-index:0;top:50%;left:0;width:100%;height:1px;background-color:#dbe2f9;transform:translateY(-50%)}.price-card__discount-icon{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%)}.price-card__discount-text{position:relative;z-index:2;color:#fff;font-size:12px;font-weight:600;line-height:18px}.price-card__features{display:flex;align-items:center;justify-content:center;column-gap:16px}.price-card__feature{color:#222e3a;font-size:14px;line-height:20px;display:flex;align-items:center;gap:6px}.price-card__feature:before{content:"";display:block;width:4px;height:4px;background-color:#20df9e;border-radius:50%;flex-shrink:0}.features-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.features-list__item{display:flex;flex-direction:column;align-items:center;gap:6px}.features-list__icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.features-list__text{color:#293a53;text-align:center;font-size:16px;line-height:24px;letter-spacing:-.1px}</style></template><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-lock-screen></body></html>
