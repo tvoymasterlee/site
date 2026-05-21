@@ -165,9 +165,27 @@ nav.scrolled { background: rgba(250,248,245,0.94); backdrop-filter: blur(14px); 
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-notice { margin-top: 28px; font-size: 12px; color: var(--muted); opacity: 0.85; max-width: 340px; line-height: 1.6; padding: 14px 18px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--mist); }
 .hero-notice strong { color: var(--rose); font-weight: 400; }
-.hero-right { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--rose-lt) 0%, var(--mist) 60%, var(--mauve-lt) 100%); }
-.hero-video-wrap { position: absolute; inset: 0; }
-.hero-video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 40px 40px 40px 0;
+}
+.hero-video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 16/9;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(42,31,45,0.18);
+}
+.hero-video-wrap video {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
 /* canvas-wrap kept for ritual canvas */
 .hero-canvas-wrap { position: absolute; inset: 0; }
 .hero-canvas-wrap canvas { width: 100%; height: 100%; display: block; }
@@ -176,8 +194,9 @@ nav.scrolled { background: rgba(250,248,245,0.94); backdrop-filter: blur(14px); 
 .stat-label { font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted); }
 @media(max-width:900px){
   #hero { grid-template-columns:1fr; min-height:auto; }
-  .hero-left { padding:120px 28px 60px; }
-  .hero-right { height:280px; }
+  .hero-left { padding:120px 28px 40px; }
+  .hero-right { padding: 0 24px 48px; justify-content: center; }
+  .hero-video-wrap { max-width: 100%; aspect-ratio: 16/9; border-radius: 20px; }
   .hero-stats { gap:20px; }
 }
 
