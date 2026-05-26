@@ -680,15 +680,7 @@
     if (!isOpen) item.classList.add('open');
   }
 
-  function handleForm(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'отправлено ✓';
-    btn.style.background = '#3a4a3a';
-    btn.style.color = '#c9a96e';
-    btn.disabled = true;
-    setTimeout(() => window.open('https://t.me/tvoymasterlee', '_blank'), 800);
-  }
+ 
 
  /* FORM */
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
