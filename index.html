@@ -235,6 +235,23 @@
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" style="opacity:0.2">
               <rect x="4" y="4" width="32" height="32" rx="2" stroke="currentColor" stroke-width="1"/>
               <circle cx="20" cy="16" r="6" stroke="currentColor" stroke-width="1"/>
+              <div class="hero-video-wrap">
+      <video
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster=""
+        style="width:100%;height:100%;object-fit:cover;display:block;"
+      >
+        <!-- Замените src на ссылку на ваше видео, например: -->
+        <source src="/IMG_8424.MOV" type="video/mp4"> 
+        <!-- Пока видео не загружено — показывается градиентный фон -->
+      </video>
+      <!-- Нежный оверлей поверх видео -->
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(253,248,246,0.08) 0%,rgba(42,31,45,0.15) 100%);pointer-events:none;"></div>
+    </div>
               <path d="M8 36c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="1"/>
             </svg>
             <span>мастер Ли</span>
